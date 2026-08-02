@@ -1,0 +1,227 @@
+{
+  "masthead": {
+    "first": "Neyaz",
+    "last": "Farooquee",
+    "mono": "NF",
+    "slogan": "Making sense of India and South Asia",
+    "vol": "Vol. XV · No. 3",
+    "price": "Price: my data",
+    "printed": "Published from New Delhi and Mumbai",
+    "languages": "Published in English, Urdu, Hindi and Bhojpuri",
+    "founded": "Founded 2011",
+    "email": "[your email]"
+  },
+  "ad": {
+    "claim": "A dazzling debut by a greatly gifted and remarkably brave writer",
+    "praiseSource": "Ramachandra Guha, writer",
+    "bookTitle": "An Ordinary Man's Guide to Growing Up Muslim in India · Westland, 2018",
+    "body": "Neyaz Farooquee is a journalist with BBC News in Mumbai. He has reported on business and politics across South Asia for the BBC, The New York Times, Al Jazeera English and The Caravan.",
+    "fine": "",
+    "cta": "Get in touch",
+    "cover": "images/book-cover.jpg",
+    "coverAlt": "Cover of An Ordinary Man's Guide to Growing Up Muslim in India",
+    "buyLabel": "Buy the book",
+    "buyUrl": "https://www.amazon.in/Ordinary-Guide-Growing-Muslim-India/dp/9379853602/",
+    "label": "This is a paid advertisement"
+  },
+  "lead": {
+    "kind": "reported",
+    "kicker": "Read · Reporting",
+    "hed": "Why India tops the list of abandoned sailors",
+    "deck": "India supplies more merchant crew than almost any country on earth — and more abandoned seafarers than any. Of the 3,133 sailors left stranded worldwide in 2024, about 900 were Indians.",
+    "caption": "",
+    "url": "https://www.bbc.com/news/articles/c3r4nr2zy2do",
+    "img": "images/sailors.jpg",
+    "credit": "Special arrangement"
+  },
+  "watch": [
+    {
+      "hed": "Air India seeks a sweeping waiver from 2025 crash victims' families",
+      "kicker": "",
+      "dur": "",
+      "url": "https://www.facebook.com/watch/?v=1317570227155975",
+      "related": [
+        {
+          "type": "Text",
+          "title": "Air India crash pilot's father vows to defend son's reputation",
+          "credit": "",
+          "url": "https://www.bbc.com/news/articles/cj0gj911060o"
+        },
+        {
+          "type": "Radio",
+          "title": "Lives, interviews and despatches",
+          "credit": "",
+          "url": ""
+        },
+        {
+          "type": "TV",
+          "title": "Lives",
+          "credit": "",
+          "url": ""
+        }
+      ],
+      "img": "images/air-india.jpg",
+      "credit": ""
+    },
+    {
+      "hed": "The Middle East conflict reaches India's “glass city”",
+      "kicker": "",
+      "dur": "",
+      "url": "https://www.instagram.com/reels/DX84CI8M0FM/",
+      "related": [
+        {
+          "type": "Text",
+          "title": "A faraway conflict threatens livelihoods in India's glass hub",
+          "credit": "",
+          "url": "https://www.bbc.com/news/articles/ce8pdv86359o"
+        },
+        {
+          "type": "TV",
+          "title": "Lives from the ground",
+          "credit": "",
+          "url": ""
+        },
+        {
+          "type": "Radio",
+          "title": "Lives and despatches",
+          "credit": "",
+          "url": ""
+        }
+      ],
+      "img": "images/glass-city.jpg",
+      "credit": ""
+    }
+  ],
+  "secondary": [
+    {
+      "kind": "reported",
+      "kicker": "Read · Reporting",
+      "hed": "Indian tribes seek to bring back ancestral skulls from the UK",
+      "deck": "The Nagas want to bring home human remains which colonial administrators had removed from the country.",
+      "url": "https://www.bbc.com/news/articles/c9vn13zr1n9o"
+    },
+    {
+      "kind": "reported",
+      "kicker": "Read · Reporting",
+      "hed": "The Indian activist who went on a hunger strike to save his cold desert home",
+      "deck": "Climate activist Sonam Wangchuk, who ended a 16-day-long hunger strike this week, says his fight is not over.",
+      "url": "https://www.bbc.com/news/articles/cvg32g1764jo"
+    },
+    {
+      "kind": "reported",
+      "kicker": "Read · Reporting",
+      "hed": "Why there are endless legal battles over centuries-old Muslim properties in India",
+      "deck": "Thousands of Muslim charitable and religious properties in India are tangled in long-running disputes.",
+      "url": "https://www.bbc.com/news/articles/cly84vggk4ro"
+    }
+  ],
+  "feature": {
+    "kicker": "Watch · Production",
+    "hed": "Why the AI summit being held in India is significant",
+    "dur": "",
+    "deck": "More than 100 countries are expected to participate in what India is calling the first international AI summit to be hosted in the Global South.",
+    "role": "",
+    "url": "https://www.instagram.com/reels/DU5CcYgj9qR/",
+    "related": [
+      {
+        "type": "TV",
+        "title": "Lives from the ground",
+        "credit": "",
+        "url": ""
+      },
+      {
+        "type": "Radio",
+        "title": "Despatches and lives",
+        "credit": "",
+        "url": ""
+      }
+    ],
+    "img": "images/ai-summit.jpg",
+    "credit": "AI-generated illustration"
+  },
+  "briefs": [
+    {
+      "hed": "Local journalist joins the BBC",
+      "dateline": "New Delhi",
+      "year": "2020",
+      "text": "A journalist working on the edit page of Hindustan Times has joined the BBC, where he, sources say, will report and produce stories on India and the region."
+    },
+    {
+      "hed": "Debut author's book released",
+      "dateline": "Bengaluru",
+      "year": "2018",
+      "text": "Called An Ordinary Man's Guide to Growing Up Muslim in India, the book examines identity, secularism and migration in contemporary India. It was written as part of a New India Foundation fellowship."
+    },
+    {
+      "hed": "Journalist boasts about freelance work",
+      "dateline": "New Delhi",
+      "year": "",
+      "text": "A journalist has claimed to have contributed to The New York Times, The Caravan and Al Jazeera English on a range of subjects, among them"
+    }
+  ],
+  "promohead": "You may also be interested in",
+  "promo": [
+    {
+      "outlet": "BBC News",
+      "title": "Modi addresses nation for first time since start of India-Pakistan strikes",
+      "url": "https://www.bbc.com/news/articles/cm26760pj13o"
+    },
+    {
+      "outlet": "BBC News",
+      "title": "A murder that shook British India and toppled a king",
+      "url": "https://www.bbc.com/news/articles/c70e0drd480o"
+    },
+    {
+      "outlet": "BBC News",
+      "title": "The decades-old intrigue over an Indian guest house in Mecca",
+      "url": "https://www.bbc.com/news/articles/cwy3gqz48qzo"
+    }
+  ],
+  "corrections": [
+    {
+      "text": "Newspaper"
+    },
+    {
+      "text": "Book"
+    },
+    {
+      "text": "Newspaper"
+    },
+    {
+      "text": "Digital/TV/Radio/Text"
+    },
+    {
+      "text": "?"
+    }
+  ],
+  "letters": [
+    {
+      "text": "Is your output legitimate? Is it verifiable?",
+      "attr": "Anonymous",
+      "note": "Yes.",
+      "noteLink": "Write to us",
+      "noteUrl": "contact.html"
+    }
+  ],
+  "archivehead": "From the archive",
+  "archive": [
+    {
+      "year": "",
+      "outlet": "The Caravan",
+      "title": "The Seeker: Asaduddin Owaisi's ambition to unite India's Muslim electorate",
+      "url": "https://caravanmagazine.in/reportage/the-seeker-asaduddin-owaisi-india-muslim-electorate"
+    },
+    {
+      "year": "2013",
+      "outlet": "The New York Times",
+      "title": "An Afghan church grows in Delhi",
+      "url": "https://archive.nytimes.com/india.blogs.nytimes.com/2013/07/22/an-afghan-church-grows-in-delhi/"
+    },
+    {
+      "year": "2013",
+      "outlet": "The New York Times",
+      "title": "Can urban planning help India's cities reduce sexual violence?",
+      "url": "https://archive.nytimes.com/india.blogs.nytimes.com/2013/09/26/can-urban-planning-help-indias-cities-reduce-sexual-violence/"
+    }
+  ]
+}

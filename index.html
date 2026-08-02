@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neyaz Farooquee — reporting and production, South Asia</title>
+<meta name="description" content="Reporting and production from India and South Asia. Business, politics and labour, in text and video.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1a18;
+  --ink-2:#55534d;
+  --ink-3:#8a8880;
+  --paper:#ffffff;
+  --tint:#f6f6f4;
+  --rule:#d8d5cc;
+  --reported:#8f3a1c;
+  --produced:#0f6e56;
+  --serif:'Spectral',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:36px 28px 28px}
+a{color:inherit;text-decoration:none}
+a:hover .hl{text-decoration:underline;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--reported);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+.folio{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--sans);font-size:10.5px;color:var(--ink-3);letter-spacing:.02em}
+.flag{display:flex;align-items:center;justify-content:center;gap:16px;margin:18px 0 9px}
+.flag .nm{font-size:clamp(30px,6.4vw,44px);font-weight:500;letter-spacing:-.025em;line-height:1}
+.mono{width:38px;height:38px;border:1px solid var(--ink-3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex:0 0 auto}
+.slogan{text-align:center;font-style:italic;font-size:14px;color:var(--ink-2);margin-bottom:16px}
+.strap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--sans);font-size:10.5px;color:var(--ink-2);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:8px 0;margin-bottom:28px}
+
+.kicker{font-family:var(--sans);font-size:10px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:7px}
+.k-rep{color:var(--reported)}
+.k-pro{color:var(--produced)}
+.hed{font-weight:500;line-height:1.16;letter-spacing:-.01em}
+.deck{color:var(--ink-2);line-height:1.68}
+.photo{background:var(--rule);border-radius:2px;display:flex;align-items:flex-end}
+.photo span{font-family:var(--sans);font-size:10px;color:var(--ink);padding:7px 9px}
+.vid{background:#3d3b37;border-radius:2px;display:flex;align-items:center;justify-content:center;position:relative}
+.vid .play{width:28px;height:28px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--ink)}
+.vid .dur{position:absolute;bottom:5px;right:7px;font-family:var(--sans);font-size:10px;color:#dcd9d2}
+.vid .ovc{position:absolute;bottom:5px;left:7px;font-family:var(--sans);font-size:9.5px;color:#cfccc5;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+.meta{font-family:var(--sans);font-size:11px;color:var(--ink-3);margin-top:5px}
+
+.top{display:grid;grid-template-columns:minmax(0,1.95fr) minmax(0,1fr);gap:28px;align-items:start}
+.top .lead{border-right:1px solid var(--rule);padding-right:28px}
+.lead .hed{font-size:clamp(22px,3.1vw,30px);margin-bottom:12px}
+.lead .photo{height:300px;margin-bottom:6px}
+.lead .deck{font-size:15px}
+.railhead{font-family:var(--sans);font-size:10px;letter-spacing:.09em;text-transform:uppercase;border-bottom:1px solid var(--ink);padding-bottom:6px;margin-bottom:14px;color:var(--produced)}
+.railitem{margin-bottom:20px}
+.railitem .vid{height:112px;margin-bottom:8px}
+.railitem .hed{font-size:15.5px}
+.rel-link{font-family:var(--sans);font-size:11px;color:var(--reported);margin-top:4px;display:inline-block;background:none;border:0;padding:0;cursor:pointer}
+
+.row3{border-top:1px solid var(--ink);margin-top:28px;padding-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:24px}
+.row3 .col{border-right:1px solid var(--rule);padding-right:22px}
+.row3 .col:last-child{border-right:0;padding-right:0}
+.row3 .hed{font-size:17px;margin-bottom:7px}
+.row3 .deck{font-size:13px}
+
+.adlabel{text-align:center;font-family:var(--sans);font-size:9.5px;letter-spacing:.16em;color:var(--ink-3);margin-bottom:7px}
+.ad{border-top:1px solid var(--ink-3);border-bottom:1px solid var(--ink-3);background:var(--tint);padding:22px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:24px;align-items:center;font-family:var(--sans)}
+.ad .bookcol{display:flex;flex-direction:column;align-items:center;gap:10px;width:104px}
+.ad .cover{width:104px;height:150px;background:var(--rule);border:1px solid var(--ink-3);border-radius:2px;object-fit:cover;display:block}
+.ad .buy{border:1px solid var(--ink);background:var(--ink);color:var(--paper);border-radius:4px;padding:8px 14px;font-size:12.5px;white-space:nowrap;display:inline-block;text-align:center;width:100%}
+.ad .buy:hover{background:#000}
+.ad .claim{font-family:var(--serif);font-size:21px;font-weight:400;font-style:italic;line-height:1.35;margin-bottom:8px}
+.ad .src{font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);margin-bottom:12px}
+.ad .title{font-size:13px;font-weight:600;margin-bottom:5px}
+.ad .body{font-size:13.5px;line-height:1.6;color:var(--ink-2)}
+.ad .fine{font-size:12px;color:var(--ink-3);margin-top:9px}
+.ad .cta{border:1px solid var(--ink);border-radius:4px;padding:10px 18px;font-size:13px;white-space:nowrap;display:inline-block}
+.adslot{margin:30px 0 28px}
+
+.mid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:28px;align-items:start}
+.mid .story{border-right:1px solid var(--rule);padding-right:28px}
+.mid .story .hed{font-size:21px;margin-bottom:10px}
+.mid .story .vid{height:230px;margin-bottom:6px}
+.role{font-family:var(--sans);font-size:11.5px;color:var(--ink-3);border-top:1px solid var(--rule);padding-top:9px;margin-bottom:16px}
+.relhead{font-family:var(--sans);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2);border-bottom:1px solid var(--ink);padding-bottom:6px;margin-bottom:12px}
+.rel{display:flex;gap:10px;padding-bottom:6px;border-bottom:1px solid var(--rule);margin-bottom:6px;align-items:baseline}
+.rel:last-of-type{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.rel .ic{font-family:var(--sans);font-size:9.5px;letter-spacing:.07em;color:var(--ink-3);flex:0 0 38px;text-transform:uppercase}
+.rel .t{font-size:13px;line-height:1.3}
+.rel .meta{margin-top:2px}
+.photo,.vid{background-size:cover;background-position:center}
+.cred{font-family:var(--sans);font-size:10px;color:var(--ink-3);text-align:right;margin-bottom:11px}
+.railitem .cred{margin-bottom:6px}
+.relhead{margin-top:14px}
+.railitem .relhead{border-bottom-width:1px;padding-bottom:5px;margin-bottom:8px}
+
+.box{border:1px solid var(--ink);padding:15px 16px}
+.boxhead{text-align:center;border-bottom:1px solid var(--ink);padding-bottom:8px;margin-bottom:12px;font-size:16px;font-weight:500}
+.brief{padding-bottom:10px;border-bottom:1px solid var(--rule);margin-bottom:10px}
+.brief:last-of-type{border-bottom:0}
+.brief .bh{font-family:var(--sans);font-size:12.5px;font-weight:600;line-height:1.3;margin-bottom:4px}
+.brief .bt{font-size:12.5px;line-height:1.55;color:var(--ink-2)}
+.brief .dl{color:var(--ink-3);font-family:var(--sans);font-size:10.5px;letter-spacing:.04em}
+.fade{position:relative;max-height:78px;overflow:hidden}
+.fade::after{content:'';position:absolute;left:0;right:0;bottom:0;height:38px;background:linear-gradient(to bottom,rgba(255,255,255,0),var(--paper))}
+.sub{border-top:1px solid var(--ink);margin-top:14px;padding-top:13px;text-align:center}
+.sub .st{font-size:15px;margin-bottom:9px}
+.sub .sb{border:1px solid var(--ink);border-radius:4px;padding:9px 16px;font-family:var(--sans);font-size:13px;display:inline-block}
+.sub .sf{font-family:var(--sans);font-size:11px;color:var(--ink-3);margin-top:9px;line-height:1.5}
+
+.arch{border-top:2px solid var(--ink);margin:28px 7% 0;padding-top:11px}
+.arch .ah{font-family:var(--sans);font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-2);margin-bottom:11px}
+.arch .row{display:grid;grid-template-columns:38px minmax(0,1fr);gap:14px;padding-bottom:9px;border-bottom:1px dotted var(--ink-3);margin-bottom:9px;align-items:baseline}
+.arch .row:last-of-type{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.arch .yr{font-family:var(--sans);font-size:12px;font-weight:600;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.arch .t{font-size:14px;line-height:1.35;color:var(--ink-2)}
+.arch .t .hl{color:var(--ink)}
+.arch .out{font-family:var(--sans);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);white-space:nowrap}
+.promo{background:var(--tint);border-radius:4px;margin-top:28px;padding:18px 22px;font-family:var(--sans)}
+.promo .ph{font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);margin-bottom:13px}
+.promo .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:22px}
+.promo .o{font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--reported);margin-bottom:5px}
+.promo .t{font-size:14px;font-weight:500;line-height:1.35}
+
+.foot2{border-top:1px solid var(--ink);margin-top:28px;padding-top:20px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:26px}
+.foot2 .col{border-right:1px solid var(--rule);padding-right:24px}
+.foot2 .col:last-child{border-right:0;padding-right:0}
+.foot2 .h{font-family:var(--sans);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2);margin-bottom:10px}
+.foot2 .t{font-size:13px;line-height:1.7;color:var(--ink-2)}
+.foot2 .attr{font-family:var(--sans);font-size:11px;color:var(--ink-3);margin-left:6px;white-space:nowrap}
+.ednote{display:block;margin-top:7px;font-size:12.5px;line-height:1.6;color:var(--ink-2)}
+.ednote b{font-family:var(--sans);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-right:6px}
+
+.colophon{border-top:1px solid var(--ink);margin-top:24px;padding-top:14px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--sans);font-size:10.5px;color:var(--ink-3)}
+.colophon nav{display:flex;gap:16px}
+.disclaim{font-family:var(--sans);font-size:10px;color:var(--ink-3);line-height:1.6;margin-top:10px}
+
+/* ---------- edit mode ---------- */
+.editbtn{background:none;border:0;font-family:var(--sans);font-size:10.5px;color:var(--ink-3);cursor:pointer;padding:0;text-decoration:underline}
+body.editing .editable{position:relative;outline:1px dashed var(--rule);outline-offset:6px}
+.ctl{display:none;gap:6px;margin:8px 0 14px;flex-wrap:wrap}
+body.editing .ctl{display:flex}
+.ctl button{font-family:var(--sans);font-size:11px;padding:4px 9px;border:1px solid var(--rule);background:var(--paper);border-radius:3px;cursor:pointer;color:var(--ink-2)}
+.ctl button:hover{border-color:var(--ink);color:var(--ink)}
+.bar{position:sticky;top:0;z-index:40;background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:12.5px;padding:10px 16px;display:none;align-items:center;gap:12px;flex-wrap:wrap}
+body.editing .bar{display:flex}
+.bar button{font-family:var(--sans);font-size:12px;padding:5px 11px;border:1px solid #6b6862;background:none;color:var(--paper);border-radius:3px;cursor:pointer}
+.bar button:hover{background:#2f2d2a}
+.bar .sp{flex:1}
+dialog{border:1px solid var(--ink);border-radius:4px;padding:0;max-width:520px;width:calc(100% - 32px);background:var(--paper);color:var(--ink)}
+dialog::backdrop{background:rgba(26,26,24,.45)}
+.dlg{padding:20px 22px;font-family:var(--sans)}
+.dlg h2{font-family:var(--serif);font-size:19px;font-weight:500;margin:0 0 16px}
+.dlg label{display:block;font-size:11.5px;color:var(--ink-2);margin:0 0 5px}
+.dlg .f{margin-bottom:13px}
+.dlg input,.dlg textarea,.dlg select{width:100%;font-family:var(--sans);font-size:13px;padding:8px 10px;border:1px solid var(--rule);border-radius:3px;background:var(--paper);color:var(--ink)}
+.dlg textarea{resize:vertical;min-height:64px}
+.dlg .actions{display:flex;gap:9px;justify-content:flex-end;margin-top:18px}
+.dlg .actions button{font-size:13px;padding:8px 15px;border:1px solid var(--ink);background:none;border-radius:3px;cursor:pointer;color:var(--ink)}
+.dlg .actions .primary{background:var(--ink);color:var(--paper)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:22px;background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:12.5px;padding:9px 16px;border-radius:3px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:60}
+.toast.on{opacity:1}
+
+@media (max-width:820px){
+  .wrap{padding:24px 18px}
+  .top,.mid{grid-template-columns:1fr;gap:24px}
+  .top .lead,.mid .story{border-right:0;padding-right:0;border-bottom:1px solid var(--rule);padding-bottom:22px}
+  .row3 .col{border-right:0;padding-right:0;border-bottom:1px solid var(--rule);padding-bottom:18px}
+  .row3 .col:last-child{border-bottom:0;padding-bottom:0}
+  .ad{grid-template-columns:1fr;text-align:left}
+  .foot2 .col{border-right:0;padding-right:0}
+  .folio,.strap{font-size:10px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="bar" role="region" aria-label="Edit mode">
+  <strong style="font-weight:500">Edit mode</strong>
+  <span class="sp"></span>
+  <button type="button" id="exp">Download data.json</button>
+  <button type="button" id="imp">Load data.json</button>
+  <button type="button" id="rst">Reset to saved</button>
+  <button type="button" id="off">Done</button>
+</div>
+
+<div class="wrap">
+  <h1 class="sr">Neyaz Farooquee — reporting and production, South Asia</h1>
+
+  <div class="folio" id="folio"></div>
+
+  <div class="flag editable" id="flag"></div>
+  <div class="slogan" id="slogan"></div>
+  <div class="ctl" data-ctl="masthead"><button type="button" data-act="edit-masthead">Edit masthead</button></div>
+
+  <div class="strap" id="strap"></div>
+
+  <div class="top">
+    <div class="lead" id="lead"></div>
+    <div>
+      <div class="railhead">Watch &middot; Production</div>
+      <div id="rail"></div>
+      <div class="ctl"><button type="button" data-act="add" data-sec="watch">Add video</button></div>
+    </div>
+  </div>
+
+  <div class="row3" id="row3"></div>
+  <div class="ctl"><button type="button" data-act="add" data-sec="secondary">Add story</button></div>
+
+  <div class="adslot">
+    <div class="adlabel" id="adlabel"></div>
+    <div class="ad editable" id="ad"></div>
+    <div class="ctl"><button type="button" data-act="edit-ad">Edit advertisement</button></div>
+  </div>
+
+  <div class="mid">
+    <div class="story" id="feature"></div>
+    <div>
+      <div class="box">
+        <div class="boxhead">In brief</div>
+        <div id="briefs"></div>
+        <div class="sub">
+          <div class="st">Subscribe to read more</div>
+          <a class="sb" href="contact.html">Continue &rarr;</a>
+          <div class="sf">No charge, no newsletter</div>
+        </div>
+      </div>
+      <div class="ctl"><button type="button" data-act="add" data-sec="briefs">Add brief</button></div>
+    </div>
+  </div>
+
+  <div class="promo">
+    <div class="ph" id="promohead"></div>
+    <div class="grid" id="promo"></div>
+  </div>
+  <div class="ctl"><button type="button" data-act="add" data-sec="promo">Add byline</button><button type="button" data-act="edit-promohead">Rename box</button></div>
+
+  <div class="foot2">
+    <div class="col">
+      <div class="h">[Course] corrections</div>
+      <div id="corrections"></div>
+      <div class="ctl"><button type="button" data-act="add" data-sec="corrections">Add step</button></div>
+    </div>
+    <div class="col">
+      <div class="h">Letters to the editor</div>
+      <div id="letters"></div>
+      <div class="ctl"><button type="button" data-act="add" data-sec="letters">Add letter</button></div>
+    </div>
+  </div>
+
+  <div class="colophon">
+    <span id="founded"></span>
+    <nav><a href="contact.html" class="hl">Contact</a><a href="#" class="hl" id="archive">Archive</a></nav>
+    <span>&copy; <span id="who"></span> &middot; <button class="editbtn" id="on" type="button">Edit</button></span>
+  </div>
+</div>
+
+<dialog id="dlg"><form method="dialog" class="dlg" id="form"></form></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const DEFAULT = {
+  "masthead": {
+    "first": "Neyaz",
+    "last": "Farooquee",
+    "mono": "NF",
+    "slogan": "Making sense of India and South Asia",
+    "vol": "Vol. XV · No. 3",
+    "price": "Price: my data",
+    "printed": "Published from New Delhi and Mumbai",
+    "languages": "Published in English, Urdu, Hindi and Bhojpuri",
+    "founded": "Founded 2011",
+    "email": "[your email]"
+  },
+  "ad": {
+    "claim": "A dazzling debut by a greatly gifted and remarkably brave writer",
+    "praiseSource": "Ramachandra Guha, writer",
+    "bookTitle": "An Ordinary Man's Guide to Growing Up Muslim in India · Westland, 2018",
+    "body": "Neyaz Farooquee is a journalist with BBC News in Mumbai. He has reported on business and politics across South Asia for the BBC, The New York Times, Al Jazeera English and The Caravan.",
+    "fine": "",
+    "cta": "Get in touch",
+    "cover": "images/book-cover.jpg",
+    "coverAlt": "Cover of An Ordinary Man's Guide to Growing Up Muslim in India",
+    "buyLabel": "Buy the book",
+    "buyUrl": "https://www.amazon.in/Ordinary-Guide-Growing-Muslim-India/dp/9379853602/",
+    "label": "This is a paid advertisement"
+  },
+  "lead": {
+    "kind": "reported",
+    "kicker": "Read · Reporting",
+    "hed": "Why India tops the list of abandoned sailors",
+    "deck": "India supplies more merchant crew than almost any country on earth — and more abandoned seafarers than any. Of the 3,133 sailors left stranded worldwide in 2024, about 900 were Indians.",
+    "caption": "",
+    "url": "https://www.bbc.com/news/articles/c3r4nr2zy2do",
+    "img": "images/sailors.jpg",
+    "credit": "Special arrangement"
+  },
+  "watch": [
+    {
+      "hed": "Air India seeks a sweeping waiver from 2025 crash victims' families",
+      "kicker": "",
+      "dur": "",
+      "url": "https://www.facebook.com/watch/?v=1317570227155975",
+      "related": [
+        {
+          "type": "Text",
+          "title": "Air India crash pilot's father vows to defend son's reputation",
+          "credit": "",
+          "url": "https://www.bbc.com/news/articles/cj0gj911060o"
+        },
+        {
+          "type": "Radio",
+          "title": "Lives, interviews and despatches",
+          "credit": "",
+          "url": ""
+        },
+        {
+          "type": "TV",
+          "title": "Lives",
+          "credit": "",
+          "url": ""
+        }
+      ],
+      "img": "images/air-india.jpg",
+      "credit": ""
+    },
+    {
+      "hed": "The Middle East conflict reaches India's “glass city”",
+      "kicker": "",
+      "dur": "",
+      "url": "https://www.instagram.com/reels/DX84CI8M0FM/",
+      "related": [
+        {
+          "type": "Text",
+          "title": "A faraway conflict threatens livelihoods in India's glass hub",
+          "credit": "",
+          "url": "https://www.bbc.com/news/articles/ce8pdv86359o"
+        },
+        {
+          "type": "TV",
+          "title": "Lives from the ground",
+          "credit": "",
+          "url": ""
+        },
+        {
+          "type": "Radio",
+          "title": "Lives and despatches",
+          "credit": "",
+          "url": ""
+        }
+      ],
+      "img": "images/glass-city.jpg",
+      "credit": ""
+    }
+  ],
+  "secondary": [
+    {
+      "kind": "reported",
+      "kicker": "Read · Reporting",
+      "hed": "Indian tribes seek to bring back ancestral skulls from the UK",
+      "deck": "The Nagas want to bring home human remains which colonial administrators had removed from the country.",
+      "url": "https://www.bbc.com/news/articles/c9vn13zr1n9o"
+    },
+    {
+      "kind": "reported",
+      "kicker": "Read · Reporting",
+      "hed": "The Indian activist who went on a hunger strike to save his cold desert home",
+      "deck": "Climate activist Sonam Wangchuk, who ended a 16-day-long hunger strike this week, says his fight is not over.",
+      "url": "https://www.bbc.com/news/articles/cvg32g1764jo"
+    },
+    {
+      "kind": "reported",
+      "kicker": "Read · Reporting",
+      "hed": "Why there are endless legal battles over centuries-old Muslim properties in India",
+      "deck": "Thousands of Muslim charitable and religious properties in India are tangled in long-running disputes.",
+      "url": "https://www.bbc.com/news/articles/cly84vggk4ro"
+    }
+  ],
+  "feature": {
+    "kicker": "Watch · Production",
+    "hed": "Why the AI summit being held in India is significant",
+    "dur": "",
+    "deck": "More than 100 countries are expected to participate in what India is calling the first international AI summit to be hosted in the Global South.",
+    "role": "",
+    "url": "https://www.instagram.com/reels/DU5CcYgj9qR/",
+    "related": [
+      {
+        "type": "TV",
+        "title": "Lives from the ground",
+        "credit": "",
+        "url": ""
+      },
+      {
+        "type": "Radio",
+        "title": "Despatches and lives",
+        "credit": "",
+        "url": ""
+      }
+    ],
+    "img": "images/ai-summit.jpg",
+    "credit": "AI-generated illustration"
+  },
+  "briefs": [
+    {
+      "hed": "Local journalist joins the BBC",
+      "dateline": "New Delhi",
+      "year": "2020",
+      "text": "A journalist working on the edit page of Hindustan Times has joined the BBC, where he, sources say, will report and produce stories on India and the region."
+    },
+    {
+      "hed": "Debut author's book released",
+      "dateline": "Bengaluru",
+      "year": "2018",
+      "text": "Called An Ordinary Man's Guide to Growing Up Muslim in India, the book examines identity, secularism and migration in contemporary India. It was written as part of a New India Foundation fellowship."
+    },
+    {
+      "hed": "Journalist boasts about freelance work",
+      "dateline": "New Delhi",
+      "year": "",
+      "text": "A journalist has claimed to have contributed to The New York Times, The Caravan and Al Jazeera English on a range of subjects, among them"
+    }
+  ],
+  "promohead": "You may also be interested in",
+  "promo": [
+    {
+      "outlet": "BBC News",
+      "title": "Modi addresses nation for first time since start of India-Pakistan strikes",
+      "url": "https://www.bbc.com/news/articles/cm26760pj13o"
+    },
+    {
+      "outlet": "BBC News",
+      "title": "A murder that shook British India and toppled a king",
+      "url": "https://www.bbc.com/news/articles/c70e0drd480o"
+    },
+    {
+      "outlet": "BBC News",
+      "title": "The decades-old intrigue over an Indian guest house in Mecca",
+      "url": "https://www.bbc.com/news/articles/cwy3gqz48qzo"
+    }
+  ],
+  "corrections": [
+    {
+      "text": "Newspaper"
+    },
+    {
+      "text": "Book"
+    },
+    {
+      "text": "Newspaper"
+    },
+    {
+      "text": "Digital/TV/Radio/Text"
+    },
+    {
+      "text": "?"
+    }
+  ],
+  "letters": [
+    {
+      "text": "Is your output legitimate? Is it verifiable?",
+      "attr": "Anonymous",
+      "note": "Yes.",
+      "noteLink": "Write to us",
+      "noteUrl": "contact.html"
+    }
+  ],
+  "archivehead": "From the archive",
+  "archive": [
+    {
+      "year": "",
+      "outlet": "The Caravan",
+      "title": "The Seeker: Asaduddin Owaisi's ambition to unite India's Muslim electorate",
+      "url": "https://caravanmagazine.in/reportage/the-seeker-asaduddin-owaisi-india-muslim-electorate"
+    },
+    {
+      "year": "2013",
+      "outlet": "The New York Times",
+      "title": "An Afghan church grows in Delhi",
+      "url": "https://archive.nytimes.com/india.blogs.nytimes.com/2013/07/22/an-afghan-church-grows-in-delhi/"
+    },
+    {
+      "year": "2013",
+      "outlet": "The New York Times",
+      "title": "Can urban planning help India's cities reduce sexual violence?",
+      "url": "https://archive.nytimes.com/india.blogs.nytimes.com/2013/09/26/can-urban-planning-help-indias-cities-reduce-sexual-violence/"
+    }
+  ]
+};
+const KEY='nf-site-v1';
+let data=structuredClone(DEFAULT);
+
+const store={
+  async get(){
+    try{ if(window.storage){const r=await window.storage.get(KEY);return r?JSON.parse(r.value):null;} }catch(e){}
+    try{ const v=window.localStorage.getItem(KEY);return v?JSON.parse(v):null; }catch(e){}
+    return null;
+  },
+  async set(v){
+    const s=JSON.stringify(v);
+    try{ if(window.storage){await window.storage.set(KEY,s);return true;} }catch(e){}
+    try{ window.localStorage.setItem(KEY,s);return true; }catch(e){}
+    return false;
+  }
+};
+
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ext=u=>/^https?:/i.test(String(u||''))?' target="_blank" rel="noopener noreferrer"':'';
+const $=id=>document.getElementById(id);
+let toastT;
+function toast(m){const t=$('toast');t.textContent=m;t.classList.add('on');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('on'),1900);}
+
+function relLine(r,sec,j,n){
+  const t=r.url?'<a href="'+esc(r.url)+'"'+ext(r.url)+'><div class="t"><span class="hl">'+esc(r.title)+'</span></div></a>':'<div class="t">'+esc(r.title)+'</div>';
+  return '<div class="rel"><span class="ic">'+esc(r.type)+'</span><div style="min-width:0">'+t+(r.credit?'<div class="meta">'+esc(r.credit)+'</div>':'')+itemCtl(sec,j,n)+'</div></div>';
+}
+const bg=u=>u?' style="background-image:url('+esc(u).replace(/\)/g,'%29')+')"':'';
+function itemCtl(sec,i,n){
+  return '<div class="ctl"><button type="button" data-act="edit" data-sec="'+sec+'" data-i="'+i+'">Edit</button>'+
+    (i>0?'<button type="button" data-act="up" data-sec="'+sec+'" data-i="'+i+'">Move up</button>':'')+
+    (i<n-1?'<button type="button" data-act="down" data-sec="'+sec+'" data-i="'+i+'">Move down</button>':'')+
+    '<button type="button" data-act="del" data-sec="'+sec+'" data-i="'+i+'">Delete</button></div>';
+}
+
+function render(){
+  const m=data.masthead;
+  $('folio').innerHTML='<span>'+esc(m.vol)+'</span><span id="today"></span><span>'+esc(m.price)+'</span>';
+  $('today').textContent=new Date().toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  $('flag').innerHTML='<span class="nm">'+esc(m.first)+'</span><span class="mono" aria-hidden="true">'+esc(m.mono)+'</span><span class="nm">'+esc(m.last)+'</span>';
+  $('slogan').textContent=m.slogan;
+  $('strap').innerHTML='<span>'+esc(m.printed)+'</span><span>'+esc(m.languages)+'</span>';
+  $('founded').textContent=m.founded;
+  $('who').textContent=m.first+' '+m.last;
+  const mail='mailto:'+m.email;
+
+  const a=data.ad;
+  $('adlabel').textContent=a.label;
+  const cover=a.cover?'<img class="cover" src="'+esc(a.cover)+'" alt="'+esc(a.coverAlt)+'">':'<span class="cover" aria-hidden="true"></span>';
+  $('ad').innerHTML='<div class="bookcol">'+cover+'<a class="buy" href="'+esc(a.buyUrl)+'"'+ext(a.buyUrl)+'>'+esc(a.buyLabel)+'</a></div>'+
+    '<div><div class="claim">\u201c'+esc(a.claim)+'\u201d</div><div class="src">\u2014 '+esc(a.praiseSource)+'</div><div class="title">'+esc(a.bookTitle)+'</div><div class="body">'+esc(a.body)+'</div>'+(a.fine?'<div class="fine">'+esc(a.fine)+'</div>':'')+'</div>'+
+    '<div><a class="cta" href="'+mail+'">'+esc(a.cta)+'</a></div>';
+
+  const L=data.lead;
+  $('lead').innerHTML='<div class="kicker '+(L.kind==='produced'?'k-pro':'k-rep')+'">'+esc(L.kicker)+'</div>'+
+    '<a href="'+esc(L.url)+'"'+ext(L.url)+'><h2 class="hed"><span class="hl">'+esc(L.hed)+'</span></h2></a>'+
+    '<div class="photo"'+bg(L.img)+'><span>'+esc(L.caption)+'</span></div>'+(L.credit?'<div class="cred">'+esc(L.credit)+'</div>':'')+
+    '<p class="deck">'+esc(L.deck)+'</p>'+
+    '<div class="ctl"><button type="button" data-act="edit-lead">Edit lead story</button></div>'+
+    '<div class="arch"><div class="ah">'+esc(data.archivehead)+'</div>'+
+    data.archive.map((x,i)=>'<div class="row"><div class="yr">'+esc(x.year)+'</div><div><a href="'+esc(x.url)+'"'+ext(x.url)+'><div class="t"><span class="hl">'+esc(x.title)+'</span> <span class="out">'+esc(x.outlet)+'</span></div></a>'+itemCtl('archive',i,data.archive.length)+'</div></div>').join('')+
+    '<div class="ctl"><button type="button" data-act="add" data-sec="archive">Add archive story</button><button type="button" data-act="edit-archivehead">Rename box</button></div></div>';
+
+  $('rail').innerHTML=data.watch.map((w,i)=>{
+    const rel=(w.related||[]);
+    return '<div class="railitem"><a href="'+esc(w.url)+'"'+ext(w.url)+'><div class="vid"'+bg(w.img)+'><span class="play" aria-hidden="true">&#9654;</span>'+(w.credit?'<span class="ovc">'+esc(w.credit)+'</span>':'')+'<span class="dur">'+esc(w.dur)+'</span></div>'+
+    '<div class="hed"><span class="hl">'+esc(w.hed)+'</span></div></a>'+(w.kicker?'<div class="meta">'+esc(w.kicker)+'</div>':'')+
+    (rel.length?'<div class="relhead" style="margin-top:12px">Related stories</div>'+rel.map((r,j)=>relLine(r,'watch.'+i+'.related',j,rel.length)).join(''):'')+
+    '<div class="ctl"><button type="button" data-act="add" data-sec="watch.'+i+'.related">Add related story</button></div>'+
+    itemCtl('watch',i,data.watch.length)+'</div>';}).join('');
+
+  $('row3').innerHTML=data.secondary.map((s,i)=>
+    '<div class="col"><div class="kicker '+(s.kind==='produced'?'k-pro':'k-rep')+'">'+esc(s.kicker)+'</div>'+
+    '<a href="'+esc(s.url)+'"'+ext(s.url)+'><h3 class="hed"><span class="hl">'+esc(s.hed)+'</span></h3></a>'+
+    '<p class="deck">'+esc(s.deck)+'</p>'+itemCtl('secondary',i,data.secondary.length)+'</div>').join('');
+
+  const F=data.feature;
+  $('feature').innerHTML='<div class="kicker k-pro">'+esc(F.kicker)+'</div>'+
+    '<a href="'+esc(F.url)+'"'+ext(F.url)+'><h2 class="hed"><span class="hl">'+esc(F.hed)+'</span></h2></a>'+
+    '<div class="vid"'+bg(F.img)+'><span class="play" aria-hidden="true">&#9654;</span>'+(F.credit?'<span class="ovc">'+esc(F.credit)+'</span>':'')+'<span class="dur">'+esc(F.dur)+'</span></div>'+
+    '<p class="deck" style="font-size:14px">'+esc(F.deck)+'</p>'+(F.role?'<div class="role">'+esc(F.role)+'</div>':'')+
+    '<div class="relhead">Related stories</div>'+
+    F.related.map((r,i)=>relLine(r,'feature.related',i,F.related.length)).join('')+
+    '<div class="ctl"><button type="button" data-act="add" data-sec="feature.related">Add related story</button><button type="button" data-act="edit-feature">Edit this story</button></div>';
+
+  $('briefs').innerHTML=data.briefs.map((b,i)=>{
+    const last=i===data.briefs.length-1;
+    return '<div class="brief"><div class="'+(last?'fade':'')+'"><div class="bh">'+esc(b.hed)+'</div>'+
+      '<div class="bt"><span class="dl">'+esc(b.dateline.toUpperCase())+(b.year?', '+esc(b.year):'')+' \u2014</span> '+esc(b.text)+'</div></div>'+
+      itemCtl('briefs',i,data.briefs.length)+'</div>';
+  }).join('');
+
+  $('promohead').textContent=data.promohead;
+  $('promo').innerHTML=data.promo.map((p,i)=>
+    '<div><div class="o">'+esc(p.outlet)+'</div><a href="'+esc(p.url)+'"'+ext(p.url)+'><div class="t"><span class="hl">'+esc(p.title)+'</span></div></a>'+itemCtl('promo',i,data.promo.length)+'</div>').join('');
+
+  $('corrections').innerHTML='<p class="t">'+data.corrections.map(c=>esc(c.text)).join(' &nbsp;&rarr;&nbsp; ')+'</p>'+
+    data.corrections.map((c,i)=>itemCtl('corrections',i,data.corrections.length)).join('');
+  $('letters').innerHTML=data.letters.map((l,i)=>'<p class="t">\u201c'+esc(l.text)+'\u201d<span class="attr">\u2014 '+esc(l.attr)+'</span>'+
+    (l.note?'<span class="ednote"><b>Editor\u2019s note:</b>'+esc(l.note)+(l.noteLink?' <a href="'+esc(l.noteUrl||'contact.html')+'"'+ext(l.noteUrl)+' class="hl" style="color:var(--reported)">'+esc(l.noteLink)+'</a>':'')+'</span>':'')+'</p>'+itemCtl('letters',i,data.letters.length)).join('');
+}
+
+const SCHEMA={
+  masthead:[['first','First name'],['last','Surname'],['mono','Monogram'],['slogan','Slogan'],['vol','Volume line'],['price','Price line'],['printed','Published-from line'],['languages','Languages line'],['founded','Founded line'],['email','Email'],],
+  ad:[['cover','Book cover image URL'],['coverAlt','Cover image alt text'],['buyLabel','Buy button label'],['buyUrl','Buy link'],['claim','Praise quote','area'],['praiseSource','Quote source'],['bookTitle','Book title and imprint'],['body','About the author','area'],['label','Label above the ad'],['fine','Small print (optional)'],['cta','Button label']],
+  lead:[['kicker','Kicker (outlet, dateline)'],['hed','Headline'],['deck','Standfirst','area'],['img','Image URL'],['caption','Photo caption'],['credit','Photo credit'],['url','Link'],['kind','Type','select']],
+  feature:[['kicker','Kicker'],['hed','Headline'],['dur','Duration'],['deck','Standfirst','area'],['img','Poster image URL'],['credit','Photo credit'],['role','Your role'],['url','Link']],
+  watch:[['hed','Headline'],['kicker','Outlet, format and your role'],['dur','Duration'],['img','Poster image URL'],['credit','Photo credit'],['url','Link']],
+  'watch.related':[['type','Format (Text, TV, Radio, Social)'],['title','Headline or description'],['credit','Outlet and your credit'],['url','Link (leave blank if none)']],
+  secondary:[['kicker','Kicker'],['hed','Headline'],['deck','Standfirst','area'],['url','Link'],['kind','Type','select']],
+  'feature.related':[['type','Format (Text, Audio, Social)'],['title','Headline'],['credit','Outlet and your credit'],['url','Link']],
+  briefs:[['hed','Brief headline'],['dateline','Dateline (place)'],['year','Year'],['text','Text','area']],
+  promo:[['outlet','Outlet'],['title','Headline'],['url','Link']],
+  archive:[['year','Year'],['outlet','Outlet'],['title','Headline'],['url','Link']],
+  corrections:[['text','Step']],
+  letters:[['text','Letter','area'],['attr','Attribution'],['note',"Editor's note",'area'],['noteLink','Link text in the note'],['noteUrl','Link target']]
+};
+const BLANK={
+  watch:{hed:'New video',kicker:'Outlet \u00b7 Your role',dur:'',img:'',credit:'',url:'',related:[]},
+  'watch.related':{type:'Text',title:'New element',credit:'',url:''},
+  secondary:{kind:'reported',kicker:'Reporting \u00b7 Outlet \u00b7 Dateline',hed:'New story',deck:'',url:'#'},
+  'feature.related':{type:'Text',title:'New element',credit:'Outlet \u00b7 Your credit',url:'#'},
+  briefs:{hed:'New brief',dateline:'Mumbai',year:'',text:''},
+  promo:{outlet:'Outlet',title:'New byline',url:''},
+  archive:{year:'',outlet:'Outlet',title:'New story',url:''},
+  corrections:{text:'New step'},
+  letters:{text:'',attr:'',note:'',noteLink:'',noteUrl:'contact.html'}
+};
+const get=p=>p.split('.').reduce((o,k)=>o[k],data);
+const skey=p=>p.replace(/\.\d+\./g,'.');
+
+function openForm(title,fields,obj,done){
+  const f=$('form');
+  f.innerHTML='<h2>'+esc(title)+'</h2>'+fields.map(([k,label,t])=>{
+    const v=esc(obj[k]);
+    if(t==='area')return '<div class="f"><label for="fd_'+k+'">'+esc(label)+'</label><textarea id="fd_'+k+'" name="'+k+'">'+v+'</textarea></div>';
+    if(t==='select')return '<div class="f"><label for="fd_'+k+'">'+esc(label)+'</label><select id="fd_'+k+'" name="'+k+'"><option value="reported"'+(obj[k]==='reported'?' selected':'')+'>Reporting</option><option value="produced"'+(obj[k]==='produced'?' selected':'')+'>Production</option></select></div>';
+    return '<div class="f"><label for="fd_'+k+'">'+esc(label)+'</label><input id="fd_'+k+'" name="'+k+'" value="'+v+'"></div>';
+  }).join('')+'<div class="actions"><button type="button" value="cancel" id="cx">Cancel</button><button type="submit" class="primary">Save</button></div>';
+  $('cx').onclick=()=>$('dlg').close();
+  f.onsubmit=e=>{const fd=new FormData(f);fields.forEach(([k])=>obj[k]=fd.get(k));done&&done();save();};
+  $('dlg').showModal();
+}
+
+async function save(){render();const ok=await store.set(data);toast(ok?'Saved':'Saved in this session only \u2014 use Download data.json');}
+
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-act]');if(!b)return;
+  const act=b.dataset.act,sec=b.dataset.sec,i=+b.dataset.i;
+  if(act==='edit-masthead')return openForm('Masthead',SCHEMA.masthead,data.masthead);
+  if(act==='edit-ad')return openForm('Advertisement',SCHEMA.ad,data.ad);
+  if(act==='edit-lead')return openForm('Lead story',SCHEMA.lead,data.lead);
+  if(act==='edit-feature')return openForm('Feature video',SCHEMA.feature,data.feature);
+  if(act==='edit-archivehead'){const o={archivehead:data.archivehead};return openForm('Box title',[['archivehead','Title']],o,()=>{data.archivehead=o.archivehead;});}
+  if(act==='edit-promohead'){const o={promohead:data.promohead};return openForm('Box title',[['promohead','Title']],o,()=>{data.promohead=o.promohead;});}
+  const arr=get(sec);
+  if(act==='add'){const it=structuredClone(BLANK[skey(sec)]);arr.push(it);save();openForm('New entry',SCHEMA[skey(sec)],it);return;}
+  if(act==='edit')return openForm('Edit entry',SCHEMA[skey(sec)],arr[i]);
+  if(act==='del'){if(confirm('Delete this entry?')){arr.splice(i,1);save();}return;}
+  if(act==='up'){[arr[i-1],arr[i]]=[arr[i],arr[i-1]];save();return;}
+  if(act==='down'){[arr[i+1],arr[i]]=[arr[i],arr[i+1]];save();return;}
+});
+
+$('on').onclick=()=>{document.body.classList.add('editing');window.scrollTo({top:0});};
+$('off').onclick=()=>document.body.classList.remove('editing');
+$('exp').onclick=()=>{
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='data.json';a.click();
+  toast('Downloaded \u2014 commit this next to index.html');
+};
+$('imp').onclick=()=>{
+  const inp=document.createElement('input');inp.type='file';inp.accept='application/json';
+  inp.onchange=()=>{const f=inp.files[0];if(!f)return;const r=new FileReader();
+    r.onload=()=>{try{data=JSON.parse(r.result);save();}catch(err){toast("That file isn't valid JSON");}};r.readAsText(f);};
+  inp.click();
+};
+$('rst').onclick=async()=>{const s=await store.get();data=s||structuredClone(DEFAULT);render();toast('Reset');};
+
+(async function init(){
+  try{const r=await fetch('data.json',{cache:'no-store'});if(r.ok)data=await r.json();}catch(e){}
+  const s=await store.get();if(s)data=s;
+  render();
+  if(location.hash==='#edit')document.body.classList.add('editing');
+})();
+</script>
+</body>
+</html>
