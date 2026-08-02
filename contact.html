@@ -102,8 +102,8 @@ button:hover{background:#000}
 
 <script>
 const FALLBACK={first:"Neyaz",last:"Farooquee",mono:"NF",slogan:"Making sense of India and South Asia",
- vol:"Vol. XV \u00b7 No. 3",price:"Price: my data",printed:"Published from New Delhi and Mumbai",
- languages:"Published in English, Urdu, Hindi and Bhojpuri",email:"[your email]"};
+ vol:"Vol. XV \u00b7 No. 3",price:"Price: my data",printed:"Mumbai and New Delhi",
+ languages:"In English, Urdu, Hindi and Bhojpuri",email:"[your email]"};
 (async function(){
   let m=FALLBACK;
   try{const r=await fetch('data.json',{cache:'no-store'});if(r.ok){const d=await r.json();m=Object.assign({},FALLBACK,d.masthead||{});}}catch(e){}

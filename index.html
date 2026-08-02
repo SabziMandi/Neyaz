@@ -170,9 +170,26 @@ dialog::backdrop{background:rgba(26,26,24,.45)}
   .top .lead,.mid .story{border-right:0;padding-right:0;border-bottom:1px solid var(--rule);padding-bottom:22px}
   .row3 .col{border-right:0;padding-right:0;border-bottom:1px solid var(--rule);padding-bottom:18px}
   .row3 .col:last-child{border-bottom:0;padding-bottom:0}
-  .ad{grid-template-columns:1fr;text-align:left}
-  .foot2 .col{border-right:0;padding-right:0}
-  .folio,.strap{font-size:10px}
+  .folio{font-size:10px}
+  .strap{font-size:9.5px;gap:6px;flex-wrap:nowrap}
+  .strap span{white-space:nowrap}
+
+  .lead .photo{height:200px}
+  .railitem .vid{height:200px}
+  .mid .story .vid{height:200px}
+  .arch{margin-left:0;margin-right:0}
+
+  .ad{grid-template-columns:1fr;gap:18px}
+  .ad>div:first-child{justify-self:center}
+  .ad>div:last-child{justify-self:center;text-align:center}
+  .ad .bookcol{width:128px}
+  .ad .cta{padding:11px 26px}
+
+  .foot2{grid-template-columns:1fr;gap:16px;border-top:0;padding-top:24px}
+  .foot2 .col{border:1px solid var(--ink);border-right:1px solid var(--ink);padding:14px 15px}
+}
+@media (max-width:400px){
+  .strap{font-size:8.6px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
@@ -221,7 +238,7 @@ dialog::backdrop{background:rgba(26,26,24,.45)}
     <div class="story" id="feature"></div>
     <div>
       <div class="box">
-        <div class="boxhead">In brief</div>
+        <div class="boxhead">News in brief</div>
         <div id="briefs"></div>
         <div class="sub">
           <div class="st">Subscribe to read more</div>
@@ -255,7 +272,7 @@ dialog::backdrop{background:rgba(26,26,24,.45)}
   <div class="colophon">
     <span id="founded"></span>
     <nav><a href="contact.html" class="hl">Contact</a><a href="#" class="hl" id="archive">Archive</a></nav>
-    <span>&copy; <span id="who"></span> &middot; <button class="editbtn" id="on" type="button">Edit</button></span>
+    <span>&copy; <span id="who"></span></span>
   </div>
 </div>
 
@@ -271,8 +288,8 @@ const DEFAULT = {
     "slogan": "Making sense of India and South Asia",
     "vol": "Vol. XV · No. 3",
     "price": "Price: my data",
-    "printed": "Published from New Delhi and Mumbai",
-    "languages": "Published in English, Urdu, Hindi and Bhojpuri",
+    "printed": "Mumbai and New Delhi",
+    "languages": "In English, Urdu, Hindi and Bhojpuri",
     "founded": "Founded 2011",
     "email": "neyaz.jmi@gmail.com"
   },
@@ -297,7 +314,7 @@ const DEFAULT = {
     "deck": "India supplies more merchant crew than almost any country on earth — and more abandoned seafarers than any. Of the 3,133 sailors left stranded worldwide in 2024, about 900 were Indians.",
     "caption": "",
     "url": "https://www.bbc.com/news/articles/c3r4nr2zy2do",
-    "img": "images/sailors.jpg",
+    "img": "images/seafarers.jpg",
     "credit": "Special arrangement",
     "pos": "center"
   },
@@ -658,8 +675,8 @@ document.addEventListener('click',e=>{
   if(act==='down'){[arr[i+1],arr[i]]=[arr[i],arr[i+1]];save();return;}
 });
 
-$('on').onclick=()=>{document.body.classList.add('editing');window.scrollTo({top:0});};
-$('off').onclick=()=>document.body.classList.remove('editing');
+window.addEventListener('hashchange',()=>{if(location.hash==='#edit')document.body.classList.add('editing');});
+$('off').onclick=()=>{document.body.classList.remove('editing');if(location.hash==='#edit')history.replaceState(null,'',location.pathname);};
 $('exp').onclick=()=>{
   const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
   const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='data.json';a.click();
