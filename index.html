@@ -27,6 +27,7 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);
 a{color:inherit;text-decoration:none}
 a:hover .hl{text-decoration:underline;text-underline-offset:3px}
 :focus-visible{outline:2px solid var(--reported);outline-offset:3px}
+.mb{display:none}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 
 .folio{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--sans);font-size:10.5px;color:var(--ink-3);letter-spacing:.02em}
@@ -130,7 +131,8 @@ a:hover .hl{text-decoration:underline;text-underline-offset:3px}
 .foot2 .col:last-child{border-right:0;padding-right:0}
 .foot2 .h{font-family:var(--sans);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2);margin-bottom:10px}
 .foot2 .t{font-size:13px;line-height:1.7;color:var(--ink-2)}
-.foot2 .attr{font-family:var(--sans);font-size:11px;color:var(--ink-3);margin-left:6px;white-space:nowrap}
+.foot2 .attr{font-family:var(--sans);font-size:11px;color:var(--ink-3);margin-left:6px}
+.foot2 .t{overflow-wrap:anywhere}
 .ednote{display:block;margin-top:7px;font-size:12.5px;line-height:1.6;color:var(--ink-2)}
 .ednote b{font-family:var(--sans);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-right:6px}
 
@@ -185,8 +187,11 @@ dialog::backdrop{background:rgba(26,26,24,.45)}
   .ad .bookcol{width:128px}
   .ad .cta{padding:11px 26px}
 
-  .foot2{grid-template-columns:1fr;gap:16px;border-top:0;padding-top:24px}
-  .foot2 .col{border:1px solid var(--ink);border-right:1px solid var(--ink);padding:14px 15px}
+  .dk{display:none}
+  .mb{display:inline}
+  .foot2{grid-template-columns:1fr;gap:0;border-top:1px solid var(--ink);padding-top:16px}
+  .foot2 .col{border:0;padding:0}
+  .foot2 .col+.col{border-top:1px solid var(--rule);margin-top:18px;padding-top:16px}
 }
 @media (max-width:400px){
   .strap{font-size:8.6px}
@@ -288,10 +293,12 @@ const DEFAULT = {
     "slogan": "Making sense of India and South Asia",
     "vol": "Vol. XV · No. 3",
     "price": "Price: my data",
-    "printed": "Mumbai and New Delhi",
-    "languages": "In English, Urdu, Hindi and Bhojpuri",
+    "printed": "Published from Mumbai and New Delhi",
+    "languages": "Published in English, Urdu, Hindi and Bhojpuri",
     "founded": "Founded 2011",
-    "email": "neyaz.jmi@gmail.com"
+    "email": "neyaz.jmi@gmail.com",
+    "printedShort": "Mumbai and New Delhi",
+    "languagesShort": "In English, Urdu, Hindi and Bhojpuri"
   },
   "ad": {
     "claim": "A dazzling debut by a greatly gifted and remarkably brave writer",
@@ -316,7 +323,7 @@ const DEFAULT = {
     "url": "https://www.bbc.com/news/articles/c3r4nr2zy2do",
     "img": "images/seafarers.jpg",
     "credit": "Special arrangement",
-    "pos": "center"
+    "pos": "center 30%"
   },
   "watch": [
     {
@@ -553,7 +560,8 @@ function render(){
   $('today').textContent=new Date().toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
   $('flag').innerHTML='<span class="nm">'+esc(m.first)+'</span><span class="mono" aria-hidden="true">'+esc(m.mono)+'</span><span class="nm">'+esc(m.last)+'</span>';
   $('slogan').textContent=m.slogan;
-  $('strap').innerHTML='<span>'+esc(m.printed)+'</span><span>'+esc(m.languages)+'</span>';
+  $('strap').innerHTML='<span><span class="dk">'+esc(m.printed)+'</span><span class="mb">'+esc(m.printedShort||m.printed)+'</span></span>'+
+    '<span><span class="dk">'+esc(m.languages)+'</span><span class="mb">'+esc(m.languagesShort||m.languages)+'</span></span>';
   $('founded').textContent=m.founded;
   $('who').textContent=m.first+' '+m.last;
   const mail='mailto:'+m.email;
@@ -615,7 +623,7 @@ function render(){
 }
 
 const SCHEMA={
-  masthead:[['first','First name'],['last','Surname'],['mono','Monogram'],['slogan','Slogan'],['vol','Volume line'],['price','Price line'],['printed','Published-from line'],['languages','Languages line'],['founded','Founded line'],['email','Email'],],
+  masthead:[['first','First name'],['last','Surname'],['mono','Monogram'],['slogan','Slogan'],['vol','Volume line'],['price','Price line'],['printed','Published-from line'],['printedShort','Published-from line (mobile)'],['languagesShort','Languages line (mobile)'],['languages','Languages line'],['founded','Founded line'],['email','Email'],],
   ad:[['cover','Book cover image URL'],['coverAlt','Cover image alt text'],['buyLabel','Buy button label'],['buyUrl','Buy link'],['claim','Praise quote','area'],['praiseSource','Quote source'],['bookTitle','Book title and imprint'],['body','About the author','area'],['label','Label above the ad'],['fine','Small print (optional)'],['cta','Button label'],['ctaUrl','Button link']],
   lead:[['kicker','Kicker (outlet, dateline)'],['hed','Headline'],['deck','Standfirst','area'],['img','Image URL'],['pos','Image position (e.g. center, top, 50% 30%)'],['caption','Photo caption'],['credit','Photo credit'],['url','Link'],['kind','Type','select']],
   feature:[['kicker','Kicker'],['hed','Headline'],['dur','Duration'],['deck','Standfirst','area'],['img','Poster image URL'],['pos','Image position (e.g. center, top, 50% 30%)'],['credit','Photo credit'],['role','Your role'],['url','Link']],

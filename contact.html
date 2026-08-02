@@ -25,8 +25,15 @@ a.hl:hover{text-decoration:underline;text-underline-offset:3px}
 .strap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--sans);font-size:10.5px;color:var(--ink-2);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:8px 0;margin-bottom:30px}
 h1{font-family:var(--serif);font-weight:500;font-size:26px;margin:0 0 5px;text-align:center}
 .sub{border-bottom:1px solid var(--ink);margin:14px 0 26px}
-.intro{font-family:var(--sans);font-size:12.5px;line-height:1.7;color:var(--ink-2);margin:0 0 16px}
-.cols{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:34px;align-items:start}
+
+.cols{display:grid;grid-template-columns:minmax(0,1.4fr) 44px minmax(0,1fr);align-items:stretch}
+.ordiv{display:flex;flex-direction:column;align-items:center;padding-top:4px}
+.ordiv .ln{width:1px;flex:1;background:var(--rule);min-height:30px}
+.ordiv .w{font-family:var(--sans);font-size:10px;letter-spacing:.11em;color:var(--ink-3);padding:9px 0}
+.intro,.outro{font-family:var(--serif);font-style:italic;font-size:12.5px;line-height:1.7;color:var(--ink-2);margin:0}
+.intro{margin-bottom:11px}
+.outro{margin-top:11px;color:var(--ink-3)}
+.m-only{display:none}
 label{display:block;font-family:var(--sans);font-size:11.5px;color:var(--ink-2);margin-bottom:5px}
 .f{margin-bottom:14px}
 input,textarea{width:100%;font-family:var(--sans);font-size:13.5px;padding:9px 11px;border:1px solid var(--rule);border-radius:3px;background:var(--paper);color:var(--ink)}
@@ -40,7 +47,14 @@ button:hover{background:#000}
 .side .v:last-child{margin-bottom:0}
 .side .s{font-family:var(--sans);font-size:12px;color:var(--ink-2);line-height:1.75}
 .back{border-top:1px solid var(--ink);margin-top:32px;padding-top:14px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--sans);font-size:10.5px;color:var(--ink-3)}
-@media (max-width:760px){.cols{grid-template-columns:1fr;gap:26px}.wrap{padding:24px 18px 32px}}
+@media (max-width:760px){
+.cols{grid-template-columns:1fr;gap:0}
+.wrap{padding:24px 18px 32px}
+.ordiv{display:none}
+.d-only{display:none}
+.m-only{display:block}
+.intro{margin-top:26px}
+}
 </style>
 </head>
 <body>
@@ -80,8 +94,11 @@ button:hover{background:#000}
       </form>
     </div>
 
+    <div class="ordiv" aria-hidden="true"><span class="ln"></span><span class="w">OR</span><span class="ln"></span></div>
+
     <div>
-      <p class="intro">Expect some delay due to the volume of email; we will try to respond as quickly as possible. You may write directly on this email but that would be redundant:</p>
+      <p class="intro d-only">You may write directly on this email but that would be redundant:</p>
+      <p class="intro m-only">Or you may write directly on this email but that would be redundant:</p>
       <div class="side">
         <div class="v" style="white-space:nowrap">neyaz dot jmi at gmail dot com</div>
         <div class="h">Where</div>
@@ -91,6 +108,7 @@ button:hover{background:#000}
         <div class="h" style="margin-top:16px">Elsewhere</div>
         <div class="s"><a class="hl" href="https://x.com/nafsmanzer" target="_blank" rel="noopener noreferrer">@nafsmanzer</a></div>
       </div>
+      <p class="outro">Expect some delay due to the volume of email; we will try to respond as quickly as possible.</p>
     </div>
   </div>
 

@@ -6,10 +6,12 @@
     "slogan": "Making sense of India and South Asia",
     "vol": "Vol. XV · No. 3",
     "price": "Price: my data",
-    "printed": "Mumbai and New Delhi",
-    "languages": "In English, Urdu, Hindi and Bhojpuri",
+    "printed": "Published from Mumbai and New Delhi",
+    "languages": "Published in English, Urdu, Hindi and Bhojpuri",
     "founded": "Founded 2011",
-    "email": "neyaz.jmi@gmail.com"
+    "email": "neyaz.jmi@gmail.com",
+    "printedShort": "Mumbai and New Delhi",
+    "languagesShort": "In English, Urdu, Hindi and Bhojpuri"
   },
   "ad": {
     "claim": "A dazzling debut by a greatly gifted and remarkably brave writer",
@@ -34,7 +36,7 @@
     "url": "https://www.bbc.com/news/articles/c3r4nr2zy2do",
     "img": "images/seafarers.jpg",
     "credit": "Special arrangement",
-    "pos": "center"
+    "pos": "center 30%"
   },
   "watch": [
     {
