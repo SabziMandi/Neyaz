@@ -64,14 +64,16 @@ button:hover{background:#000}
 
   <div class="cols">
     <div>
-      <!-- Paste your Web3Forms access key into the access_key field below -->
+      <!-- Web3Forms. Update the redirect URL below to match your live site address. -->
       <form action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
+        <input type="hidden" name="access_key" value="5d7f926a-93e1-42b8-a484-5f3351486cd7">
         <div class="f"><label for="name">Name</label><input id="name" name="name" required></div>
         <div class="f"><label for="org">Organisation</label><input id="org" name="organisation" placeholder="Publication or company"></div>
         <div class="f"><label for="email">Email</label><input id="email" type="email" name="email" required></div>
         <div class="f"><label for="msg">What's it about</label><textarea id="msg" name="message" required placeholder="A commission, a pitch, a question"></textarea></div>
         <input type="hidden" name="subject" value="Message from your website">
+        <input type="hidden" name="from_name" value="Website contact form">
+        <input type="hidden" name="redirect" value="https://sabzimandi.github.io/neyaz/thanks.html">
         <input type="checkbox" name="botcheck" style="display:none" tabindex="-1">
         <button type="submit">Send</button>
         <div class="note">Replies usually within two working days.</div>

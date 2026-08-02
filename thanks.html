@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Message received — Neyaz Farooquee</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1a18;--ink-2:#55534d;--ink-3:#8a8880;--paper:#fff;--rule:#d8d5cc;
+--reported:#8f3a1c;--serif:'Spectral',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:36px 28px 40px}
+a{color:inherit;text-decoration:none}
+a.hl:hover{text-decoration:underline;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--reported);outline-offset:3px}
+.folio{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--sans);font-size:10.5px;color:var(--ink-3)}
+.flag{display:flex;align-items:center;justify-content:center;gap:16px;margin:18px 0 9px}
+.flag .nm{font-size:clamp(28px,5.6vw,38px);font-weight:500;letter-spacing:-.025em;line-height:1}
+.mono{width:36px;height:36px;border:1px solid var(--ink-3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex:0 0 auto}
+.slogan{text-align:center;font-style:italic;font-size:13.5px;color:var(--ink-2);margin-bottom:15px}
+.strap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--sans);font-size:10.5px;color:var(--ink-2);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:8px 0;margin-bottom:44px}
+.card{max-width:520px;margin:0 auto;text-align:center}
+.kick{font-family:var(--sans);font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--reported);margin-bottom:10px}
+h1{font-family:var(--serif);font-weight:500;font-size:30px;line-height:1.2;margin:0 0 14px}
+.body{font-size:15px;line-height:1.75;color:var(--ink-2)}
+.back{border-top:1px solid var(--ink);margin-top:52px;padding-top:14px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--sans);font-size:10.5px;color:var(--ink-3)}
+@media (max-width:760px){.wrap{padding:24px 18px 32px}.strap{margin-bottom:34px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="folio"><span id="vol"></span><span id="today"></span><span id="price"></span></div>
+
+  <a href="index.html" aria-label="Back to the front page">
+    <div class="flag">
+      <span class="nm" id="first"></span>
+      <span class="mono" id="mono" aria-hidden="true"></span>
+      <span class="nm" id="last"></span>
+    </div>
+  </a>
+  <div class="slogan" id="slogan"></div>
+  <div class="strap"><span id="printed"></span><span id="languages"></span></div>
+
+  <div class="card">
+    <div class="kick">Correspondence</div>
+    <h1>Your message has reached us.</h1>
+    <p class="body">Thank you for writing. Expect some delay due to the volume of email; we will try to respond as quickly as possible. You may write directly on this email but that would be redundant: <span style="white-space:nowrap">neyaz.jmi at gmail dot com</span></p>
+  </div>
+
+  <div class="back">
+    <a class="hl" href="index.html">&larr; Back to the front page</a>
+    <span>&copy; <span id="who"></span></span>
+  </div>
+</div>
+
+<script>
+const FALLBACK={first:"Neyaz",last:"Farooquee",mono:"NF",slogan:"Making sense of India and South Asia",
+ vol:"Vol. XV \u00b7 No. 3",price:"Price: my data",printed:"Published from New Delhi and Mumbai",
+ languages:"Published in English, Urdu, Hindi and Bhojpuri",email:"[your email]"};
+(async function(){
+  let m=FALLBACK;
+  try{const r=await fetch('data.json',{cache:'no-store'});if(r.ok){const d=await r.json();m=Object.assign({},FALLBACK,d.masthead||{});}}catch(e){}
+  const set=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v;};
+  set('first',m.first);set('last',m.last);set('mono',m.mono);set('slogan',m.slogan);
+  set('vol',m.vol);set('price',m.price);set('printed',m.printed);set('languages',m.languages);
+  set('who',m.first+' '+m.last);
+  document.getElementById('today').textContent=new Date().toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+})();
+</script>
+</body>
+</html>
