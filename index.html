@@ -43,7 +43,9 @@ a:hover .hl{text-decoration:underline;text-underline-offset:3px}
 .hed{font-weight:500;line-height:1.16;letter-spacing:-.01em}
 .deck{color:var(--ink-2);line-height:1.68}
 .photo{background:var(--rule);border-radius:2px;display:flex;align-items:flex-end}
-.photo span{font-family:var(--sans);font-size:10px;color:var(--ink);padding:7px 9px}
+.capline{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:baseline;border-bottom:1px solid var(--rule);padding-bottom:8px;margin-bottom:11px}
+.capline .cap{font-family:var(--serif);font-size:12.5px;line-height:1.35;color:var(--ink-2)}
+.capline .crd{font-family:var(--sans);font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);white-space:nowrap;text-align:right}
 .vid{background:#3d3b37;border-radius:2px;display:flex;align-items:center;justify-content:center;position:relative}
 .vid .play{width:28px;height:28px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--ink)}
 .vid .dur{position:absolute;bottom:5px;right:7px;font-family:var(--sans);font-size:10px;color:#dcd9d2}
@@ -53,7 +55,7 @@ a:hover .hl{text-decoration:underline;text-underline-offset:3px}
 .top{display:grid;grid-template-columns:minmax(0,1.95fr) minmax(0,1fr);gap:28px;align-items:start}
 .top .lead{border-right:1px solid var(--rule);padding-right:28px}
 .lead .hed{font-size:clamp(22px,3.1vw,30px);margin-bottom:12px}
-.lead .photo{height:300px;margin-bottom:6px}
+.lead .photo{height:300px;margin-bottom:9px}
 .lead .deck{font-size:15px}
 .railhead{font-family:var(--sans);font-size:10px;letter-spacing:.09em;text-transform:uppercase;border-bottom:1px solid var(--ink);padding-bottom:6px;margin-bottom:14px;color:var(--produced)}
 .railitem{margin-bottom:20px}
@@ -112,7 +114,7 @@ a:hover .hl{text-decoration:underline;text-underline-offset:3px}
 .sub .sb{border:1px solid var(--ink);border-radius:4px;padding:9px 16px;font-family:var(--sans);font-size:13px;display:inline-block}
 .sub .sf{font-family:var(--sans);font-size:11px;color:var(--ink-3);margin-top:9px;line-height:1.5}
 
-.arch{border-top:2px solid var(--ink);margin:28px 7% 0;padding-top:11px}
+.arch{border-top:2px solid var(--ink);margin:28px 9% 0 0;padding-top:11px}
 .arch .ah{font-family:var(--sans);font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-2);margin-bottom:11px}
 .arch .row{display:grid;grid-template-columns:104px minmax(0,1fr);gap:14px;padding-bottom:9px;border-bottom:1px dotted var(--ink-3);margin-bottom:9px;align-items:baseline}
 .arch .row:last-of-type{border-bottom:0;margin-bottom:0;padding-bottom:0}
@@ -177,7 +179,7 @@ dialog::backdrop{background:rgba(26,26,24,.45)}
   .lead .photo{height:200px}
   .railitem .vid{height:200px}
   .mid .story .vid{height:200px}
-  .arch{margin-left:0;margin-right:0}
+  .arch{margin:24px 0 0}
   .arch .row{grid-template-columns:1fr;gap:3px}
 
   .ad{grid-template-columns:1fr;gap:18px}
@@ -572,7 +574,8 @@ function render(){
   const L=data.lead;
   $('lead').innerHTML='<div class="kicker '+(L.kind==='produced'?'k-pro':'k-rep')+'">'+esc(L.kicker)+'</div>'+
     '<a href="'+esc(L.url)+'"'+ext(L.url)+'><h2 class="hed"><span class="hl">'+esc(L.hed)+'</span></h2></a>'+
-    '<div class="photo"'+bg(L.img,L.pos)+'><span>'+esc(L.caption)+'</span></div>'+(L.credit?'<div class="cred">'+esc(L.credit)+'</div>':'')+
+    '<div class="photo"'+bg(L.img,L.pos)+'></div>'+
+    ((L.caption||L.credit)?'<div class="capline"><span class="cap">'+esc(L.caption)+'</span><span class="crd">'+esc(L.credit)+'</span></div>':'')+
     '<p class="deck">'+esc(L.deck)+'</p>'+
     '<div class="ctl"><button type="button" data-act="edit-lead">Edit lead story</button></div>'+
     '<div class="arch"><div class="ah">'+esc(data.archivehead)+'</div>'+
