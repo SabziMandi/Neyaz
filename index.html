@@ -114,12 +114,10 @@ a:hover .hl{text-decoration:underline;text-underline-offset:3px}
 
 .arch{border-top:2px solid var(--ink);margin:28px 7% 0;padding-top:11px}
 .arch .ah{font-family:var(--sans);font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-2);margin-bottom:11px}
-.arch .row{display:grid;grid-template-columns:38px minmax(0,1fr);gap:14px;padding-bottom:9px;border-bottom:1px dotted var(--ink-3);margin-bottom:9px;align-items:baseline}
+.arch .row{display:grid;grid-template-columns:104px minmax(0,1fr);gap:14px;padding-bottom:9px;border-bottom:1px dotted var(--ink-3);margin-bottom:9px;align-items:baseline}
 .arch .row:last-of-type{border-bottom:0;margin-bottom:0;padding-bottom:0}
-.arch .yr{font-family:var(--sans);font-size:12px;font-weight:600;color:var(--ink-3);font-variant-numeric:tabular-nums}
-.arch .t{font-size:14px;line-height:1.35;color:var(--ink-2)}
-.arch .t .hl{color:var(--ink)}
-.arch .out{font-family:var(--sans);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);white-space:nowrap}
+.arch .out{font-family:var(--sans);font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);line-height:1.45}
+.arch .t{font-size:14px;line-height:1.35;color:var(--ink)}
 .promo{background:var(--tint);border-radius:4px;margin-top:28px;padding:18px 22px;font-family:var(--sans)}
 .promo .ph{font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);margin-bottom:13px}
 .promo .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:22px}
@@ -180,6 +178,7 @@ dialog::backdrop{background:rgba(26,26,24,.45)}
   .railitem .vid{height:200px}
   .mid .story .vid{height:200px}
   .arch{margin-left:0;margin-right:0}
+  .arch .row{grid-template-columns:1fr;gap:3px}
 
   .ad{grid-template-columns:1fr;gap:18px}
   .ad>div:first-child{justify-self:center}
@@ -302,9 +301,9 @@ const DEFAULT = {
   },
   "ad": {
     "claim": "A dazzling debut by a greatly gifted and remarkably brave writer",
-    "praiseSource": "Ramachandra Guha, writer",
+    "praiseSource": "Ramachandra Guha, historian and writer",
     "bookTitle": "An Ordinary Man's Guide to Growing Up Muslim in India · Westland, 2018",
-    "body": "Neyaz Farooquee is a journalist with BBC News in Mumbai. He has reported on business and politics across South Asia for the BBC, The New York Times, Al Jazeera English and The Caravan.",
+    "body": "Neyaz Farooquee is a journalist with BBC News in Mumbai. He has reported and produced stories on politics, business and society in India and South Asia, for the BBC, Hindustan Times, The New York Times and The Caravan, among others.",
     "fine": "",
     "cta": "Get in touch",
     "cover": "images/book-cover.jpg",
@@ -319,7 +318,7 @@ const DEFAULT = {
     "kicker": "Read · Reporting",
     "hed": "Why India tops the list of abandoned sailors",
     "deck": "India supplies more merchant crew than almost any country on earth — and more abandoned seafarers than any. Of the 3,133 sailors left stranded worldwide in 2024, about 900 were Indians.",
-    "caption": "",
+    "caption": "Indian seafarers stranded aboard a ship in Indonesian waters, 2025",
     "url": "https://www.bbc.com/news/articles/c3r4nr2zy2do",
     "img": "images/seafarers.jpg",
     "credit": "Special arrangement",
@@ -397,7 +396,7 @@ const DEFAULT = {
       "kind": "reported",
       "kicker": "Read · Reporting",
       "hed": "The Indian activist who went on a hunger strike to save his cold desert home",
-      "deck": "Climate activist Sonam Wangchuk, who ended a 16-day-long hunger strike this week, says his fight is not over.",
+      "deck": "Climate activist Sonam Wangchuk, who ended a hunger strike demanding greater autonomy for Ladakh, says his fight is not over.",
       "url": "https://www.bbc.com/news/articles/cvg32g1764jo"
     },
     {
@@ -450,23 +449,23 @@ const DEFAULT = {
       "hed": "Journalist boasts about freelance work",
       "dateline": "New Delhi",
       "year": "",
-      "text": "A journalist has claimed to have contributed to The New York Times, The Caravan and Al Jazeera English on a range of subjects, among them"
+      "text": "A journalist claims he has contributed to The New York Times, The Caravan and Al Jazeera English on a range of subjects, among them"
     }
   ],
   "promohead": "You may also be interested in",
   "promo": [
     {
-      "outlet": "BBC News",
+      "outlet": "Breaking",
       "title": "Modi addresses nation for first time since start of India-Pakistan strikes",
       "url": "https://www.bbc.com/news/articles/cm26760pj13o"
     },
     {
-      "outlet": "BBC News",
+      "outlet": "Feature",
       "title": "A murder that shook British India and toppled a king",
       "url": "https://www.bbc.com/news/articles/c70e0drd480o"
     },
     {
-      "outlet": "BBC News",
+      "outlet": "Feature",
       "title": "The decades-old intrigue over an Indian guest house in Mecca",
       "url": "https://www.bbc.com/news/articles/cwy3gqz48qzo"
     }
@@ -500,20 +499,17 @@ const DEFAULT = {
   "archivehead": "From the archive",
   "archive": [
     {
-      "year": "",
       "outlet": "The Caravan",
       "title": "The Seeker: Asaduddin Owaisi's ambition to unite India's Muslim electorate",
       "url": "https://caravanmagazine.in/reportage/the-seeker-asaduddin-owaisi-india-muslim-electorate"
     },
     {
-      "year": "2013",
-      "outlet": "The New York Times",
+      "outlet": "New York Times",
       "title": "An Afghan church grows in Delhi",
       "url": "https://archive.nytimes.com/india.blogs.nytimes.com/2013/07/22/an-afghan-church-grows-in-delhi/"
     },
     {
-      "year": "2013",
-      "outlet": "The New York Times",
+      "outlet": "New York Times",
       "title": "Can urban planning help India's cities reduce sexual violence?",
       "url": "https://archive.nytimes.com/india.blogs.nytimes.com/2013/09/26/can-urban-planning-help-indias-cities-reduce-sexual-violence/"
     }
@@ -580,7 +576,7 @@ function render(){
     '<p class="deck">'+esc(L.deck)+'</p>'+
     '<div class="ctl"><button type="button" data-act="edit-lead">Edit lead story</button></div>'+
     '<div class="arch"><div class="ah">'+esc(data.archivehead)+'</div>'+
-    data.archive.map((x,i)=>'<div class="row"><div class="yr">'+esc(x.year)+'</div><div><a href="'+esc(x.url)+'"'+ext(x.url)+'><div class="t"><span class="hl">'+esc(x.title)+'</span> <span class="out">'+esc(x.outlet)+'</span></div></a>'+itemCtl('archive',i,data.archive.length)+'</div></div>').join('')+
+    data.archive.map((x,i)=>'<div class="row"><div class="out">'+esc(x.outlet)+'</div><div><a href="'+esc(x.url)+'"'+ext(x.url)+'><div class="t"><span class="hl">'+esc(x.title)+'</span></div></a>'+itemCtl('archive',i,data.archive.length)+'</div></div>').join('')+
     '<div class="ctl"><button type="button" data-act="add" data-sec="archive">Add archive story</button><button type="button" data-act="edit-archivehead">Rename box</button></div></div>';
 
   $('rail').innerHTML=data.watch.map((w,i)=>{
@@ -633,7 +629,7 @@ const SCHEMA={
   'feature.related':[['type','Format (Text, Audio, Social)'],['title','Headline'],['credit','Outlet and your credit'],['url','Link']],
   briefs:[['hed','Brief headline'],['dateline','Dateline (place)'],['year','Year'],['text','Text','area']],
   promo:[['outlet','Outlet'],['title','Headline'],['url','Link']],
-  archive:[['year','Year'],['outlet','Outlet'],['title','Headline'],['url','Link']],
+  archive:[['outlet','Outlet'],['title','Headline'],['url','Link']],
   corrections:[['text','Step']],
   letters:[['text','Letter','area'],['attr','Attribution'],['note',"Editor's note",'area'],['noteLink','Link text in the note'],['noteUrl','Link target']]
 };
@@ -644,7 +640,7 @@ const BLANK={
   'feature.related':{type:'Text',title:'New element',credit:'Outlet \u00b7 Your credit',url:'#'},
   briefs:{hed:'New brief',dateline:'Mumbai',year:'',text:''},
   promo:{outlet:'Outlet',title:'New byline',url:''},
-  archive:{year:'',outlet:'Outlet',title:'New story',url:''},
+  archive:{outlet:'Outlet',title:'New story',url:''},
   corrections:{text:'New step'},
   letters:{text:'',attr:'',note:'',noteLink:'',noteUrl:'contact.html'}
 };

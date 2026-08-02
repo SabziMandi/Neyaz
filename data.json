@@ -15,7 +15,7 @@
   },
   "ad": {
     "claim": "A dazzling debut by a greatly gifted and remarkably brave writer",
-    "praiseSource": "Ramachandra Guha, writer",
+    "praiseSource": "Ramachandra Guha, historian and writer",
     "bookTitle": "An Ordinary Man's Guide to Growing Up Muslim in India · Westland, 2018",
     "body": "Neyaz Farooquee is a journalist with BBC News in Mumbai. He has reported and produced stories on politics, business and society in India and South Asia, for the BBC, Hindustan Times, The New York Times and The Caravan, among others.",
     "fine": "",
@@ -32,7 +32,7 @@
     "kicker": "Read · Reporting",
     "hed": "Why India tops the list of abandoned sailors",
     "deck": "India supplies more merchant crew than almost any country on earth — and more abandoned seafarers than any. Of the 3,133 sailors left stranded worldwide in 2024, about 900 were Indians.",
-    "caption": "",
+    "caption": "Indian seafarers stranded aboard a ship in Indonesian waters, 2025",
     "url": "https://www.bbc.com/news/articles/c3r4nr2zy2do",
     "img": "images/seafarers.jpg",
     "credit": "Special arrangement",
@@ -110,7 +110,7 @@
       "kind": "reported",
       "kicker": "Read · Reporting",
       "hed": "The Indian activist who went on a hunger strike to save his cold desert home",
-      "deck": "Climate activist Sonam Wangchuk, who ended a 16-day-long hunger strike this week, says his fight is not over.",
+      "deck": "Climate activist Sonam Wangchuk, who ended a hunger strike demanding greater autonomy for Ladakh, says his fight is not over.",
       "url": "https://www.bbc.com/news/articles/cvg32g1764jo"
     },
     {
@@ -163,7 +163,7 @@
       "hed": "Journalist boasts about freelance work",
       "dateline": "New Delhi",
       "year": "",
-      "text": "A journalist has claimed to have contributed to The New York Times, The Caravan and Al Jazeera English on a range of subjects, among them"
+      "text": "A journalist claims he has contributed to The New York Times, The Caravan and Al Jazeera English on a range of subjects, among them"
     }
   ],
   "promohead": "You may also be interested in",
@@ -213,20 +213,17 @@
   "archivehead": "From the archive",
   "archive": [
     {
-      "year": "",
       "outlet": "The Caravan",
       "title": "The Seeker: Asaduddin Owaisi's ambition to unite India's Muslim electorate",
       "url": "https://caravanmagazine.in/reportage/the-seeker-asaduddin-owaisi-india-muslim-electorate"
     },
     {
-      "year": "2013",
-      "outlet": "The New York Times",
+      "outlet": "New York Times",
       "title": "An Afghan church grows in Delhi",
       "url": "https://archive.nytimes.com/india.blogs.nytimes.com/2013/07/22/an-afghan-church-grows-in-delhi/"
     },
     {
-      "year": "2013",
-      "outlet": "The New York Times",
+      "outlet": "New York Times",
       "title": "Can urban planning help India's cities reduce sexual violence?",
       "url": "https://archive.nytimes.com/india.blogs.nytimes.com/2013/09/26/can-urban-planning-help-indias-cities-reduce-sexual-violence/"
     }
