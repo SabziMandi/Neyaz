@@ -24,7 +24,8 @@ a.hl:hover{text-decoration:underline;text-underline-offset:3px}
 .slogan{text-align:center;font-style:italic;font-size:13.5px;color:var(--ink-2);margin-bottom:15px}
 .strap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--sans);font-size:10.5px;color:var(--ink-2);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:8px 0;margin-bottom:30px}
 h1{font-family:var(--serif);font-weight:500;font-size:26px;margin:0 0 5px;text-align:center}
-.sub{text-align:center;font-family:var(--sans);font-size:11.5px;color:var(--ink-2);border-bottom:1px solid var(--ink);padding-bottom:10px;margin-bottom:26px}
+.sub{border-bottom:1px solid var(--ink);margin:14px 0 26px}
+.intro{font-family:var(--sans);font-size:12.5px;line-height:1.7;color:var(--ink-2);margin:0 0 16px}
 .cols{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:34px;align-items:start}
 label{display:block;font-family:var(--sans);font-size:11.5px;color:var(--ink-2);margin-bottom:5px}
 .f{margin-bottom:14px}
@@ -49,7 +50,7 @@ button:hover{background:#000}
     <span id="vol"></span><span id="today"></span><span id="price"></span>
   </div>
 
-  <a href="index.html" aria-label="Back to the front page">
+  <a href="./index.html" aria-label="Back to the front page">
     <div class="flag">
       <span class="nm" id="first"></span>
       <span class="mono" id="mono" aria-hidden="true"></span>
@@ -60,7 +61,7 @@ button:hover{background:#000}
   <div class="strap"><span id="printed"></span><span id="languages"></span></div>
 
   <h1>Write to us</h1>
-  <div class="sub">Commissions, pitches, corrections and general correspondence</div>
+  <div class="sub"></div>
 
   <div class="cols">
     <div>
@@ -70,32 +71,31 @@ button:hover{background:#000}
         <div class="f"><label for="name">Name</label><input id="name" name="name" required></div>
         <div class="f"><label for="org">Organisation</label><input id="org" name="organisation" placeholder="Publication or company"></div>
         <div class="f"><label for="email">Email</label><input id="email" type="email" name="email" required></div>
-        <div class="f"><label for="msg">What's it about</label><textarea id="msg" name="message" required placeholder="A commission, a pitch, a question"></textarea></div>
+        <div class="f"><label for="msg">What's it about</label><textarea id="msg" name="message" required placeholder="A question, a speaking engagement request, or just time-pass"></textarea></div>
         <input type="hidden" name="subject" value="Message from your website">
         <input type="hidden" name="from_name" value="Website contact form">
         <input type="hidden" name="redirect" value="https://sabzimandi.github.io/neyaz/thanks.html">
         <input type="checkbox" name="botcheck" style="display:none" tabindex="-1">
         <button type="submit">Send</button>
-        <div class="note">Replies usually within two working days.</div>
       </form>
     </div>
 
     <div>
+      <p class="intro">Expect some delay due to the volume of email; we will try to respond as quickly as possible. You may write directly on this email but that would be redundant:</p>
       <div class="side">
-        <div class="h">Or write directly</div>
-        <div class="v"><a class="hl" id="mail" href="#"></a></div>
+        <div class="v" style="white-space:nowrap">neyaz dot jmi at gmail dot com</div>
         <div class="h">Where</div>
-        <div class="s">Mumbai &middot; IST (UTC+5:30)</div>
+        <div class="s">Delhi/Mumbai &middot; GMT +5:30</div>
         <div class="h" style="margin-top:16px">Securely</div>
         <div class="s">Signal on request<br>PGP key available</div>
         <div class="h" style="margin-top:16px">Elsewhere</div>
-        <div class="s"><a class="hl" href="https://x.com/nafsmanzer" target="_blank" rel="noopener noreferrer">@nafsmanzer</a><br><a class="hl" href="#">LinkedIn</a></div>
+        <div class="s"><a class="hl" href="https://x.com/nafsmanzer" target="_blank" rel="noopener noreferrer">@nafsmanzer</a></div>
       </div>
     </div>
   </div>
 
   <div class="back">
-    <a class="hl" href="index.html">&larr; Back to the front page</a>
+    <a class="hl" href="./index.html">&larr; Back to the front page</a>
     <span>&copy; <span id="who"></span></span>
   </div>
 </div>
@@ -112,7 +112,6 @@ const FALLBACK={first:"Neyaz",last:"Farooquee",mono:"NF",slogan:"Making sense of
   set('vol',m.vol);set('price',m.price);set('printed',m.printed);set('languages',m.languages);
   set('who',m.first+' '+m.last);
   document.getElementById('today').textContent=new Date().toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
-  const a=document.getElementById('mail');a.href='mailto:'+m.email;a.textContent=m.email;
 })();
 </script>
 </body>

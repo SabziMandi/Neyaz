@@ -56,7 +56,7 @@ a:hover .hl{text-decoration:underline;text-underline-offset:3px}
 .lead .deck{font-size:15px}
 .railhead{font-family:var(--sans);font-size:10px;letter-spacing:.09em;text-transform:uppercase;border-bottom:1px solid var(--ink);padding-bottom:6px;margin-bottom:14px;color:var(--produced)}
 .railitem{margin-bottom:20px}
-.railitem .vid{height:112px;margin-bottom:8px}
+.railitem .vid{height:180px;margin-bottom:8px}
 .railitem .hed{font-size:15.5px}
 .rel-link{font-family:var(--sans);font-size:11px;color:var(--reported);margin-top:4px;display:inline-block;background:none;border:0;padding:0;cursor:pointer}
 
@@ -287,7 +287,8 @@ const DEFAULT = {
     "coverAlt": "Cover of An Ordinary Man's Guide to Growing Up Muslim in India",
     "buyLabel": "Buy the book",
     "buyUrl": "https://www.amazon.in/Ordinary-Guide-Growing-Muslim-India/dp/9379853602/",
-    "label": "This is a paid advertisement"
+    "label": "This is a paid advertisement",
+    "ctaUrl": "contact.html"
   },
   "lead": {
     "kind": "reported",
@@ -297,7 +298,8 @@ const DEFAULT = {
     "caption": "",
     "url": "https://www.bbc.com/news/articles/c3r4nr2zy2do",
     "img": "images/sailors.jpg",
-    "credit": "Special arrangement"
+    "credit": "Special arrangement",
+    "pos": "center"
   },
   "watch": [
     {
@@ -326,7 +328,8 @@ const DEFAULT = {
         }
       ],
       "img": "images/air-india.jpg",
-      "credit": ""
+      "credit": "",
+      "pos": "center"
     },
     {
       "hed": "The Middle East conflict reaches India's “glass city”",
@@ -354,7 +357,8 @@ const DEFAULT = {
         }
       ],
       "img": "images/glass-city.jpg",
-      "credit": ""
+      "credit": "",
+      "pos": "center"
     }
   ],
   "secondary": [
@@ -402,7 +406,8 @@ const DEFAULT = {
       }
     ],
     "img": "images/ai-summit.jpg",
-    "credit": "AI-generated illustration"
+    "credit": "AI-generated illustration",
+    "pos": "center"
   },
   "briefs": [
     {
@@ -517,7 +522,7 @@ function relLine(r,sec,j,n){
   const t=r.url?'<a href="'+esc(r.url)+'"'+ext(r.url)+'><div class="t"><span class="hl">'+esc(r.title)+'</span></div></a>':'<div class="t">'+esc(r.title)+'</div>';
   return '<div class="rel"><span class="ic">'+esc(r.type)+'</span><div style="min-width:0">'+t+(r.credit?'<div class="meta">'+esc(r.credit)+'</div>':'')+itemCtl(sec,j,n)+'</div></div>';
 }
-const bg=u=>u?' style="background-image:url('+esc(u).replace(/\)/g,'%29')+')"':'';
+const bg=(u,pos)=>u?' style="background-image:url('+esc(u).replace(/\)/g,'%29')+');background-position:'+esc(pos||'center')+'"':'';
 function itemCtl(sec,i,n){
   return '<div class="ctl"><button type="button" data-act="edit" data-sec="'+sec+'" data-i="'+i+'">Edit</button>'+
     (i>0?'<button type="button" data-act="up" data-sec="'+sec+'" data-i="'+i+'">Move up</button>':'')+
@@ -541,12 +546,12 @@ function render(){
   const cover=a.cover?'<img class="cover" src="'+esc(a.cover)+'" alt="'+esc(a.coverAlt)+'">':'<span class="cover" aria-hidden="true"></span>';
   $('ad').innerHTML='<div class="bookcol">'+cover+'<a class="buy" href="'+esc(a.buyUrl)+'"'+ext(a.buyUrl)+'>'+esc(a.buyLabel)+'</a></div>'+
     '<div><div class="claim">\u201c'+esc(a.claim)+'\u201d</div><div class="src">\u2014 '+esc(a.praiseSource)+'</div><div class="title">'+esc(a.bookTitle)+'</div><div class="body">'+esc(a.body)+'</div>'+(a.fine?'<div class="fine">'+esc(a.fine)+'</div>':'')+'</div>'+
-    '<div><a class="cta" href="'+mail+'">'+esc(a.cta)+'</a></div>';
+    '<div><a class="cta" href="'+esc(a.ctaUrl||'contact.html')+'"'+ext(a.ctaUrl)+'>'+esc(a.cta)+'</a></div>';
 
   const L=data.lead;
   $('lead').innerHTML='<div class="kicker '+(L.kind==='produced'?'k-pro':'k-rep')+'">'+esc(L.kicker)+'</div>'+
     '<a href="'+esc(L.url)+'"'+ext(L.url)+'><h2 class="hed"><span class="hl">'+esc(L.hed)+'</span></h2></a>'+
-    '<div class="photo"'+bg(L.img)+'><span>'+esc(L.caption)+'</span></div>'+(L.credit?'<div class="cred">'+esc(L.credit)+'</div>':'')+
+    '<div class="photo"'+bg(L.img,L.pos)+'><span>'+esc(L.caption)+'</span></div>'+(L.credit?'<div class="cred">'+esc(L.credit)+'</div>':'')+
     '<p class="deck">'+esc(L.deck)+'</p>'+
     '<div class="ctl"><button type="button" data-act="edit-lead">Edit lead story</button></div>'+
     '<div class="arch"><div class="ah">'+esc(data.archivehead)+'</div>'+
@@ -555,7 +560,7 @@ function render(){
 
   $('rail').innerHTML=data.watch.map((w,i)=>{
     const rel=(w.related||[]);
-    return '<div class="railitem"><a href="'+esc(w.url)+'"'+ext(w.url)+'><div class="vid"'+bg(w.img)+'><span class="play" aria-hidden="true">&#9654;</span>'+(w.credit?'<span class="ovc">'+esc(w.credit)+'</span>':'')+'<span class="dur">'+esc(w.dur)+'</span></div>'+
+    return '<div class="railitem"><a href="'+esc(w.url)+'"'+ext(w.url)+'><div class="vid"'+bg(w.img,w.pos)+'><span class="play" aria-hidden="true">&#9654;</span>'+(w.credit?'<span class="ovc">'+esc(w.credit)+'</span>':'')+'<span class="dur">'+esc(w.dur)+'</span></div>'+
     '<div class="hed"><span class="hl">'+esc(w.hed)+'</span></div></a>'+(w.kicker?'<div class="meta">'+esc(w.kicker)+'</div>':'')+
     (rel.length?'<div class="relhead" style="margin-top:12px">Related stories</div>'+rel.map((r,j)=>relLine(r,'watch.'+i+'.related',j,rel.length)).join(''):'')+
     '<div class="ctl"><button type="button" data-act="add" data-sec="watch.'+i+'.related">Add related story</button></div>'+
@@ -569,7 +574,7 @@ function render(){
   const F=data.feature;
   $('feature').innerHTML='<div class="kicker k-pro">'+esc(F.kicker)+'</div>'+
     '<a href="'+esc(F.url)+'"'+ext(F.url)+'><h2 class="hed"><span class="hl">'+esc(F.hed)+'</span></h2></a>'+
-    '<div class="vid"'+bg(F.img)+'><span class="play" aria-hidden="true">&#9654;</span>'+(F.credit?'<span class="ovc">'+esc(F.credit)+'</span>':'')+'<span class="dur">'+esc(F.dur)+'</span></div>'+
+    '<div class="vid"'+bg(F.img,F.pos)+'><span class="play" aria-hidden="true">&#9654;</span>'+(F.credit?'<span class="ovc">'+esc(F.credit)+'</span>':'')+'<span class="dur">'+esc(F.dur)+'</span></div>'+
     '<p class="deck" style="font-size:14px">'+esc(F.deck)+'</p>'+(F.role?'<div class="role">'+esc(F.role)+'</div>':'')+
     '<div class="relhead">Related stories</div>'+
     F.related.map((r,i)=>relLine(r,'feature.related',i,F.related.length)).join('')+
@@ -594,10 +599,10 @@ function render(){
 
 const SCHEMA={
   masthead:[['first','First name'],['last','Surname'],['mono','Monogram'],['slogan','Slogan'],['vol','Volume line'],['price','Price line'],['printed','Published-from line'],['languages','Languages line'],['founded','Founded line'],['email','Email'],],
-  ad:[['cover','Book cover image URL'],['coverAlt','Cover image alt text'],['buyLabel','Buy button label'],['buyUrl','Buy link'],['claim','Praise quote','area'],['praiseSource','Quote source'],['bookTitle','Book title and imprint'],['body','About the author','area'],['label','Label above the ad'],['fine','Small print (optional)'],['cta','Button label']],
-  lead:[['kicker','Kicker (outlet, dateline)'],['hed','Headline'],['deck','Standfirst','area'],['img','Image URL'],['caption','Photo caption'],['credit','Photo credit'],['url','Link'],['kind','Type','select']],
-  feature:[['kicker','Kicker'],['hed','Headline'],['dur','Duration'],['deck','Standfirst','area'],['img','Poster image URL'],['credit','Photo credit'],['role','Your role'],['url','Link']],
-  watch:[['hed','Headline'],['kicker','Outlet, format and your role'],['dur','Duration'],['img','Poster image URL'],['credit','Photo credit'],['url','Link']],
+  ad:[['cover','Book cover image URL'],['coverAlt','Cover image alt text'],['buyLabel','Buy button label'],['buyUrl','Buy link'],['claim','Praise quote','area'],['praiseSource','Quote source'],['bookTitle','Book title and imprint'],['body','About the author','area'],['label','Label above the ad'],['fine','Small print (optional)'],['cta','Button label'],['ctaUrl','Button link']],
+  lead:[['kicker','Kicker (outlet, dateline)'],['hed','Headline'],['deck','Standfirst','area'],['img','Image URL'],['pos','Image position (e.g. center, top, 50% 30%)'],['caption','Photo caption'],['credit','Photo credit'],['url','Link'],['kind','Type','select']],
+  feature:[['kicker','Kicker'],['hed','Headline'],['dur','Duration'],['deck','Standfirst','area'],['img','Poster image URL'],['pos','Image position (e.g. center, top, 50% 30%)'],['credit','Photo credit'],['role','Your role'],['url','Link']],
+  watch:[['hed','Headline'],['kicker','Outlet, format and your role'],['dur','Duration'],['img','Poster image URL'],['pos','Image position (e.g. center, top, 50% 30%)'],['credit','Photo credit'],['url','Link']],
   'watch.related':[['type','Format (Text, TV, Radio, Social)'],['title','Headline or description'],['credit','Outlet and your credit'],['url','Link (leave blank if none)']],
   secondary:[['kicker','Kicker'],['hed','Headline'],['deck','Standfirst','area'],['url','Link'],['kind','Type','select']],
   'feature.related':[['type','Format (Text, Audio, Social)'],['title','Headline'],['credit','Outlet and your credit'],['url','Link']],
@@ -608,7 +613,7 @@ const SCHEMA={
   letters:[['text','Letter','area'],['attr','Attribution'],['note',"Editor's note",'area'],['noteLink','Link text in the note'],['noteUrl','Link target']]
 };
 const BLANK={
-  watch:{hed:'New video',kicker:'Outlet \u00b7 Your role',dur:'',img:'',credit:'',url:'',related:[]},
+  watch:{hed:'New video',kicker:'Outlet \u00b7 Your role',dur:'',img:'',pos:'center',credit:'',url:'',related:[]},
   'watch.related':{type:'Text',title:'New element',credit:'',url:''},
   secondary:{kind:'reported',kicker:'Reporting \u00b7 Outlet \u00b7 Dateline',hed:'New story',deck:'',url:'#'},
   'feature.related':{type:'Text',title:'New element',credit:'Outlet \u00b7 Your credit',url:'#'},
