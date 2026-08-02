@@ -17,6 +17,7 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);
 a{color:inherit;text-decoration:none}
 a.hl:hover{text-decoration:underline;text-underline-offset:3px}
 :focus-visible{outline:2px solid var(--reported);outline-offset:3px}
+.mb{display:none}
 .folio{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--sans);font-size:10.5px;color:var(--ink-3)}
 .flag{display:flex;align-items:center;justify-content:center;gap:16px;margin:18px 0 9px}
 .flag .nm{font-size:clamp(28px,5.6vw,38px);font-weight:500;letter-spacing:-.025em;line-height:1}
@@ -30,9 +31,8 @@ h1{font-family:var(--serif);font-weight:500;font-size:26px;margin:0 0 5px;text-a
 .ordiv{display:flex;flex-direction:column;align-items:center;padding-top:4px}
 .ordiv .ln{width:1px;flex:1;background:var(--rule);min-height:30px}
 .ordiv .w{font-family:var(--sans);font-size:10px;letter-spacing:.11em;color:var(--ink-3);padding:9px 0}
-.intro,.outro{font-family:var(--serif);font-style:italic;font-size:12.5px;line-height:1.7;color:var(--ink-2);margin:0}
-.intro{margin-bottom:11px}
-.outro{margin-top:11px;color:var(--ink-3)}
+.intro{font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.55;color:var(--ink);margin:0 0 12px}
+.outro{font-family:var(--serif);font-style:italic;font-size:12px;line-height:1.7;color:var(--ink-3);margin:11px 0 0}
 .m-only{display:none}
 label{display:block;font-family:var(--sans);font-size:11.5px;color:var(--ink-2);margin-bottom:5px}
 .f{margin-bottom:14px}
@@ -53,8 +53,13 @@ button:hover{background:#000}
 .ordiv{display:none}
 .d-only{display:none}
 .m-only{display:block}
-.intro{margin-top:26px}
+.dk{display:none}
+.mb{display:inline}
+.strap{font-size:9.5px;flex-wrap:nowrap;gap:6px}
+.strap span{white-space:nowrap}
+.intro{margin-top:28px;font-size:15.5px;border-top:1px solid var(--ink);padding-top:16px}
 }
+@media (max-width:400px){.strap{font-size:8.6px}}
 </style>
 </head>
 <body>
@@ -72,7 +77,7 @@ button:hover{background:#000}
     </div>
   </a>
   <div class="slogan" id="slogan"></div>
-  <div class="strap"><span id="printed"></span><span id="languages"></span></div>
+  <div class="strap"><span><span class="dk" id="printed"></span><span class="mb" id="printedShort"></span></span><span><span class="dk" id="languages"></span><span class="mb" id="languagesShort"></span></span></div>
 
   <h1>Write to us</h1>
   <div class="sub"></div>
@@ -128,6 +133,7 @@ const FALLBACK={first:"Neyaz",last:"Farooquee",mono:"NF",slogan:"Making sense of
   const set=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v;};
   set('first',m.first);set('last',m.last);set('mono',m.mono);set('slogan',m.slogan);
   set('vol',m.vol);set('price',m.price);set('printed',m.printed);set('languages',m.languages);
+  set('printedShort',m.printedShort||m.printed);set('languagesShort',m.languagesShort||m.languages);
   set('who',m.first+' '+m.last);
   document.getElementById('today').textContent=new Date().toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
 })();
