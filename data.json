@@ -210,6 +210,28 @@
       "noteUrl": "contact.html"
     }
   ],
+  "social": [
+    {
+      "platform": "x",
+      "handle": "@nafsmanzer",
+      "url": "https://x.com/nafsmanzer"
+    },
+    {
+      "platform": "instagram",
+      "handle": "@nafsmanzer",
+      "url": "https://www.instagram.com/nafsmanzer/"
+    },
+    {
+      "platform": "linkedin",
+      "handle": "neyaz-farooquee",
+      "url": "https://www.linkedin.com/in/neyaz-farooquee-95559114/"
+    },
+    {
+      "platform": "facebook",
+      "handle": "neyaz.farooquee",
+      "url": "https://www.facebook.com/neyaz.farooquee"
+    }
+  ],
   "archivehead": "From the archive",
   "archive": [
     {
