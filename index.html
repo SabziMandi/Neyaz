@@ -65,8 +65,7 @@
       "@id": "https://neyazfarooquee.com/#page",
       "url": "https://neyazfarooquee.com/",
       "name": "Neyaz Farooquee \u2014 reporting and production, South Asia",
-      "mainEntity": { "@id": "https://neyazfarooquee.com/#person" },
-      "about": { "@id": "https://neyazfarooquee.com/#person" }
+      "mainEntity": { "@id": "https://neyazfarooquee.com/#person" }
     },
     {
       "@type": "ItemList",
@@ -248,67 +247,7 @@ dialog::backdrop{background:rgba(26,26,24,.45)}
 .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:22px;background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:12.5px;padding:9px 16px;border-radius:3px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:60}
 .toast.on{opacity:1}
 
-/* ---------- vertical video shelf ---------- */
-.shelfwrap{border-top:3px solid var(--ink);margin-top:30px;padding-top:20px}
-.shelfhead{color:var(--produced)}
-.shelfwrap.empty{display:none}
-body.editing .shelfwrap.empty{display:block}
-.shelf{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 12px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
-.shelf::-webkit-scrollbar{height:6px}
-.shelf::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
-.shelfitem{flex:0 0 auto;width:186px;scroll-snap-align:start}
-.phone{position:relative;width:186px;height:330px;border:6px solid #232220;border-radius:26px;background:#3d3b37;overflow:hidden;box-shadow:0 0 0 1px #6f6c66 inset,0 6px 18px rgba(26,26,24,.16);transition:box-shadow .18s,transform .18s}
-.phone .scr{position:absolute;inset:0;background-size:cover;background-position:center}
-.phone .notch{position:absolute;top:7px;left:50%;transform:translateX(-50%);width:54px;height:14px;background:#232220;border-radius:9px;z-index:2}
-.phone .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.94);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--ink);z-index:2}
-.phone .dur{position:absolute;bottom:10px;right:11px;font-family:var(--sans);font-size:10px;color:#e6e3dc;text-shadow:0 1px 3px rgba(0,0,0,.7);z-index:2}
-.phone .plat{position:absolute;bottom:10px;left:11px;font-family:var(--sans);font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:#e6e3dc;text-shadow:0 1px 3px rgba(0,0,0,.7);z-index:2}
-.shelfitem .hed{font-size:14px;margin-top:11px;line-height:1.3}
-.shelfitem .meta{margin-top:4px}
-a:hover .phone{box-shadow:0 0 0 1px #6f6c66 inset,0 10px 24px rgba(26,26,24,.26);transform:translateY(-2px)}
-
-/* ---------- print: A4 portrait ---------- */
-@media print{
-  @page{size:A4 portrait;margin:13mm 11mm}
-  html,body{background:#fff!important}
-  body{font-size:9.5pt;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  .wrap{max-width:none;padding:0}
-  .bar,.ctl,.toast,dialog,.editbtn,.ad .cta,.ad .buy,.sub .sb,.phone .play,.vid .play,.shelf::-webkit-scrollbar{display:none!important}
-  a{text-decoration:none;color:inherit}
-  a[href^="http"]::after{content:" (" attr(href) ")";font-family:var(--sans);font-size:6.5pt;color:var(--ink-3);word-break:break-all;font-weight:400}
-  .soc a::after,.ad a::after,.colophon a::after,.rel a::after,.shelfitem a::after{content:none}
-  .flag .nm{font-size:34pt}
-  .mono{width:34px;height:34px;font-size:12px}
-  .folio,.strap{font-size:7pt}
-  .slogan{font-size:10pt;margin-bottom:10px}
-  .top{grid-template-columns:1.9fr 1fr;gap:7mm}
-  .lead .hed{font-size:20pt}
-  .lead .photo{height:52mm}
-  .lead .deck{font-size:9.5pt}
-  .railitem .vid{height:32mm}
-  .row3{grid-template-columns:repeat(3,1fr);gap:6mm;margin-top:6mm;padding-top:5mm}
-  .row3 .hed{font-size:12pt}
-  .row3 .deck{font-size:8.5pt}
-  .adslot{margin:6mm 0}
-  .ad{padding:5mm;grid-template-columns:auto 1fr;gap:6mm}
-  .ad .claim{font-size:12pt}
-  .mid{grid-template-columns:1.5fr 1fr;gap:7mm;padding-top:5mm;break-before:page}
-  .mid .story .vid{height:46mm}
-  .shelfwrap{margin-top:6mm;padding-top:5mm}
-  .shelf{overflow:visible;display:grid;grid-template-columns:repeat(4,1fr);gap:5mm}
-  .shelfitem,.phone{width:auto}
-  .phone{height:62mm;border-width:3px;border-radius:12px}
-  .phone .notch{width:26px;height:7px;top:3px}
-  .fade{max-height:none;overflow:visible}
-  .fade::after{display:none}
-  .promo{margin-top:6mm;padding:5mm}
-  .foot2{margin-top:6mm;padding-top:5mm;gap:6mm}
-  .railitem,.brief,.row3 .col,.arch .row,.shelfitem,.rel,.promo>div{break-inside:avoid}
-  .colophon{margin-top:5mm;padding-top:4mm}
-  .colophon::after{content:"Printed from neyazfarooquee.com";display:block;width:100%;text-align:center;margin-top:4mm;font-size:7pt;color:var(--ink-3)}
-}
-
-@media (max-width:820px){
+@media screen and (max-width:820px){
   .wrap{padding:24px 18px}
   .top,.mid{grid-template-columns:1fr;gap:24px}
   .top .lead,.mid .story{border-right:0;padding-right:0;border-bottom:1px solid var(--rule);padding-bottom:22px}
@@ -321,9 +260,6 @@ a:hover .phone{box-shadow:0 0 0 1px #6f6c66 inset,0 10px 24px rgba(26,26,24,.26)
   .lead .photo{height:200px}
   .railitem .vid{height:200px}
   .mid .story .vid{height:200px}
-  .shelfitem,.phone{width:160px}
-  .phone{height:284px;border-radius:22px}
-  .shelf{gap:16px}
   .arch{margin:24px 0 0;padding:14px 16px 16px}
   .arch .row{grid-template-columns:1fr;gap:3px}
 
@@ -339,10 +275,84 @@ a:hover .phone{box-shadow:0 0 0 1px #6f6c66 inset,0 10px 24px rgba(26,26,24,.26)
   .foot2 .col{border:0;padding:0}
   .foot2 .col+.col{border-top:1px solid var(--rule);margin-top:18px;padding-top:16px}
 }
-@media (max-width:400px){
+@media screen and (max-width:400px){
   .strap{font-size:8.6px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ---------- print: A4 portrait broadsheet ---------- */
+@media print{
+  @page{size:A4 portrait;margin:12mm 10mm}
+  html,body{background:#fff}
+  body{font-size:9pt;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .wrap{max-width:none;padding:0}
+  .bar,.ctl,.toast,dialog,.editbtn,.ad .cta,.ad .buy,.sub .sb,.vid .play,.sub .sf{display:none}
+  a{text-decoration:none;color:inherit}
+  a[href^="http"]::after{content:" " attr(href);font-family:var(--sans);font-size:6pt;color:var(--ink-3);word-break:break-all;display:block;margin-top:1mm}
+  .soc a::after,.ad a::after,.colophon a::after,.rel a::after{content:none}
+
+  .flag{margin:4mm 0 2mm}
+  .flag .nm{font-size:30pt}
+  .mono{width:30px;height:30px;font-size:11px}
+  .folio,.strap{font-size:6.5pt}
+  .strap{padding:2mm 0;margin-bottom:5mm}
+  .slogan{font-size:9.5pt;margin-bottom:3mm}
+
+  .top{display:grid;grid-template-columns:1.9fr 1fr;gap:6mm;align-items:start}
+  .top .lead{border-right:1px solid var(--rule);border-bottom:0;padding-right:6mm;padding-bottom:0}
+  .lead .hed{font-size:19pt;margin-bottom:2mm}
+  .lead .photo{height:48mm;margin-bottom:2mm}
+  .lead .deck{font-size:9pt}
+  .capline{padding-bottom:1.5mm;margin-bottom:2mm}
+  .railhead{padding-bottom:1.5mm;margin-bottom:3mm}
+  .railitem{margin-bottom:5mm}
+  .railitem .vid{height:28mm;margin-bottom:2mm}
+  .railitem .hed{font-size:10.5pt}
+  .rel{padding-bottom:1mm;margin-bottom:1mm}
+  .rel .t{font-size:8.5pt}
+  .arch{margin-top:5mm;padding:4mm}
+  .arch .t{font-size:9.5pt}
+
+  .row3{grid-template-columns:repeat(3,1fr);gap:5mm;margin-top:5mm;padding-top:4mm}
+  .row3 .col{border-right:1px solid var(--rule);border-bottom:0;padding-right:5mm;padding-bottom:0}
+  .row3 .col:last-child{border-right:0}
+  .row3 .hed{font-size:11.5pt}
+  .row3 .deck{font-size:8pt}
+
+  .adslot{margin:5mm 0}
+  .ad{padding:4mm;grid-template-columns:auto 1fr;gap:5mm}
+  .ad .cover{width:78px;height:112px}
+  .ad .bookcol{width:78px}
+  .ad .claim{font-size:11.5pt}
+  .ad .body{font-size:8.5pt}
+
+  .mid{display:grid;grid-template-columns:1.5fr 1fr;gap:6mm;padding-top:4mm;margin-top:5mm}
+  .mid .story{border-right:1px solid var(--rule);border-bottom:0;padding-right:6mm;padding-bottom:0}
+  .mid .story .hed{font-size:15pt}
+  .mid .story .vid{height:42mm}
+  .box{padding:4mm}
+  .boxhead{font-size:12pt;padding-bottom:2mm;margin-bottom:3mm}
+  .brief .bh{font-size:9.5pt}
+  .brief .bt{font-size:9pt}
+  .fade{max-height:none;overflow:visible}
+  .fade::after{display:none}
+  .sub{margin-top:3mm;padding-top:3mm}
+  .sub .st{font-size:10.5pt;margin-bottom:0}
+
+  .promo{margin-top:5mm;padding:4mm}
+  .promo .grid{grid-template-columns:repeat(3,1fr);gap:5mm}
+  .promo .t{font-size:10pt}
+  .foot2{display:grid;grid-template-columns:1.2fr 1.3fr .5fr;gap:5mm;margin-top:5mm;padding-top:4mm}
+  .foot2 .col{border-right:1px solid var(--rule);border-top:0;margin-top:0;padding-right:5mm;padding-top:0}
+  .foot2 .col:last-child{border-right:0}
+  .dk{display:inline}
+  .mb{display:none}
+  .vid .dur,.vid .ovc{text-shadow:none}
+
+  .box,.railitem,.brief,.row3 .col,.arch .row,.rel,.promo>div,.adslot,.capline{break-inside:avoid}
+  .colophon{margin-top:4mm;padding-top:3mm}
+  .colophon::after{content:"Printed from neyazfarooquee.com";display:block;width:100%;text-align:center;margin-top:3mm;font-size:6.5pt;color:var(--ink-3)}
+}
 </style>
 </head>
 <body>
@@ -401,12 +411,6 @@ a:hover .phone{box-shadow:0 0 0 1px #6f6c66 inset,0 10px 24px rgba(26,26,24,.26)
     </div>
   </div>
 
-  <div class="shelfwrap">
-    <div class="railhead shelfhead">Vertical &middot; Social video</div>
-    <div class="shelf" id="shelf"></div>
-    <div class="ctl"><button type="button" data-act="add" data-sec="vertical">Add vertical video</button></div>
-  </div>
-
   <div class="promo">
     <div class="ph" id="promohead"></div>
     <div class="grid" id="promo"></div>
@@ -448,7 +452,7 @@ const DEFAULT = {
     "last": "Farooquee",
     "mono": "NF",
     "slogan": "Making sense of India and South Asia",
-    "vol": "Vol. XV · No. 3",
+    "vol": "",
     "price": "Price: my data",
     "printed": "Published from Mumbai and New Delhi",
     "languages": "Published in English, Urdu, Hindi and Bhojpuri",
@@ -610,26 +614,6 @@ const DEFAULT = {
       "text": "A journalist claims he has contributed to The New York Times, The Caravan and Al Jazeera English on a range of subjects, among them"
     }
   ],
-  "vertical": [
-    {
-      "hed": "Why the AI summit being held in India is significant",
-      "outlet": "Instagram",
-      "role": "Produced and scripted",
-      "dur": "1:12",
-      "poster": "images/ai-summit.jpg",
-      "pos": "center",
-      "url": "https://www.instagram.com/reels/DU5CcYgj9qR/"
-    },
-    {
-      "hed": "The Middle East conflict reaches India's \u201cglass city\u201d",
-      "outlet": "Instagram",
-      "role": "Reported and produced",
-      "dur": "",
-      "poster": "images/glass-city.jpg",
-      "pos": "center",
-      "url": "https://www.instagram.com/reels/DX84CI8M0FM/"
-    }
-  ],
   "promohead": "You may also be interested in",
   "promo": [
     {
@@ -773,7 +757,7 @@ function editionDateLine(){
     .format(new Date()).replace(/^([^\s,]+)\s/,'$1, ');
 }
 // Volume = years since the "Founded" year; issue number = day of the year.
-// Set masthead.vol in data.json to override; leave it blank to run on its own.
+// Put anything in masthead.vol to override; leave it blank and this runs itself.
 function autoFolio(m){
   const e=editionParts();
   const f=String(m.founded||'').match(/\d{4}/);
@@ -841,22 +825,6 @@ function render(){
       itemCtl('briefs',i,data.briefs.length)+'</div>';
   }).join('');
 
-  const VS=Array.isArray(data.vertical)?data.vertical:[];
-  const shelfEl=$('shelf');
-  if(shelfEl){
-    shelfEl.innerHTML=VS.map((v,i)=>
-      '<div class="shelfitem"><a href="'+esc(v.url)+'"'+ext(v.url)+' aria-label="'+esc(v.hed)+'">'+
-      '<div class="phone"><span class="scr"'+bg(v.poster,v.pos)+'></span><span class="notch" aria-hidden="true"></span>'+
-      '<span class="play" aria-hidden="true">&#9654;</span>'+
-      (v.outlet?'<span class="plat">'+esc(v.outlet)+'</span>':'')+
-      (v.dur?'<span class="dur">'+esc(v.dur)+'</span>':'')+'</div>'+
-      '<div class="hed"><span class="hl">'+esc(v.hed)+'</span></div></a>'+
-      (v.role?'<div class="meta">'+esc(v.role)+'</div>':'')+
-      itemCtl('vertical',i,VS.length)+'</div>').join('');
-    const wrap=shelfEl.closest('.shelfwrap');
-    if(wrap)wrap.classList.toggle('empty',!VS.length);
-  }
-
   $('promohead').textContent=data.promohead;
   $('promo').innerHTML=data.promo.map((p,i)=>
     '<div><div class="o">'+esc(p.outlet)+'</div><a href="'+esc(p.url)+'"'+ext(p.url)+'><div class="t"><span class="hl">'+esc(p.title)+'</span></div></a>'+itemCtl('promo',i,data.promo.length)+'</div>').join('');
@@ -889,7 +857,6 @@ const SCHEMA={
   secondary:[['kicker','Kicker'],['hed','Headline'],['deck','Standfirst','area'],['url','Link'],['kind','Type','select']],
   'feature.related':[['type','Format (Text, Audio, Social)'],['title','Headline'],['credit','Outlet and your credit'],['url','Link']],
   briefs:[['hed','Brief headline'],['dateline','Dateline (place)'],['year','Year'],['text','Text','area']],
-  vertical:[['hed','Headline'],['outlet','Platform or outlet'],['role','Your role'],['dur','Duration'],['poster','Poster image URL (portrait, 9:16)'],['pos','Image position (e.g. center, top, 50% 30%)'],['url','Link']],
   promo:[['outlet','Outlet'],['title','Headline'],['url','Link']],
   archive:[['outlet','Outlet'],['title','Headline'],['url','Link']],
   corrections:[['text','Step']],
@@ -902,7 +869,6 @@ const BLANK={
   secondary:{kind:'reported',kicker:'Reporting \u00b7 Outlet \u00b7 Dateline',hed:'New story',deck:'',url:'#'},
   'feature.related':{type:'Text',title:'New element',credit:'Outlet \u00b7 Your credit',url:'#'},
   briefs:{hed:'New brief',dateline:'Mumbai',year:'',text:''},
-  vertical:{hed:'New vertical video',outlet:'Instagram',role:'',dur:'',poster:'',pos:'center',url:''},
   promo:{outlet:'Outlet',title:'New byline',url:''},
   archive:{outlet:'Outlet',title:'New story',url:''},
   corrections:{text:'New step'},
@@ -963,7 +929,6 @@ $('rst').onclick=async()=>{const s=await store.get();data=s||structuredClone(DEF
   try{const r=await fetch('data.json',{cache:'no-store'});if(r.ok)data=await r.json();}catch(e){}
   const s=await store.get();if(s)data=s;
   if(!Array.isArray(data.social))data.social=structuredClone(DEFAULT.social);
-  if(!Array.isArray(data.vertical))data.vertical=structuredClone(DEFAULT.vertical);
   render();
   if(location.hash==='#edit')document.body.classList.add('editing');
 })();
