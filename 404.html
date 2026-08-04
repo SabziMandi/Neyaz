@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — Neyaz Farooquee</title>
+<meta name="robots" content="noindex">
+<script>
+/* Case repair. GitHub Pages serves from Linux, so /Contact.html and
+   /contact.html are different files. Every file in this repo is lowercase,
+   so if the requested path contains any uppercase, retry it in lowercase.
+   Lowercasing is idempotent, so this can never loop: the retried path is
+   already lowercase and falls through to the page below. */
+(function () {
+  var p = location.pathname, low = p.toLowerCase();
+  if (low !== p) location.replace(low + location.search + location.hash);
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Spectral:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1a18;--ink-2:#55534d;--ink-3:#6b6961;--paper:#fff;--rule:#d8d5cc;
+  --reported:#8f3a1c;
+  --serif:'Spectral',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+  --display:'Newsreader',Georgia,serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:36px 28px 28px}
+a{color:inherit;text-decoration:none}
+a.hl:hover{text-decoration:underline;text-underline-offset:3px}
+.folio{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--sans);font-size:10.5px;color:var(--ink-3)}
+.flag{display:flex;align-items:center;justify-content:center;gap:clamp(14px,2.2vw,22px);margin:20px 0 10px}
+.flag .nm{font-family:var(--display);font-size:clamp(32px,6.9vw,55px);font-weight:600;letter-spacing:-.028em;line-height:1}
+.mono{width:44px;height:44px;border:1px solid var(--ink-3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:15px;flex:0 0 auto}
+.slogan{text-align:center;font-style:italic;font-size:14px;color:var(--ink-2);margin-bottom:16px}
+.strap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--sans);font-size:10.5px;color:var(--ink-2);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:8px 0;margin-bottom:44px}
+.kicker{font-family:var(--sans);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--reported);margin-bottom:9px}
+.hed{font-family:var(--display);font-weight:600;font-size:clamp(25px,3.8vw,38px);line-height:1.08;letter-spacing:-.022em;margin:0 0 14px;max-width:16em}
+.deck{color:var(--ink-2);line-height:1.68;font-size:15px;max-width:34em;margin:0 0 22px}
+.back{border-top:1px solid var(--ink);margin-top:48px;padding-top:14px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--sans);font-size:10.5px;color:var(--ink-3)}
+.back nav{display:flex;gap:18px}
+.go{display:inline-block;border:1px solid var(--ink);padding:9px 17px;font-family:var(--sans);font-size:12.5px}
+@media (max-width:820px){
+  .wrap{padding:26px 18px 22px}
+  .flag{flex-direction:column;gap:10px}
+  .strap{flex-direction:column;align-items:flex-start;gap:5px;margin-bottom:32px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="folio">
+    <span>Vol. XV &middot; No. 3</span>
+    <span id="today"></span>
+    <span>Price: my data</span>
+  </div>
+
+  <div class="flag">
+    <span class="nm">Neyaz</span>
+    <span class="mono" aria-hidden="true">NF</span>
+    <span class="nm">Farooquee</span>
+  </div>
+  <div class="slogan">Making sense of India and South Asia</div>
+  <div class="strap">
+    <span>Published from Mumbai and New Delhi</span>
+    <span>Published in English, Urdu, Hindi and Bhojpuri</span>
+  </div>
+
+  <div class="kicker">Correction &middot; Page not found</div>
+  <h1 class="hed">This page was never published</h1>
+  <p class="deck">The address may have been mistyped, or the page may have moved. Everything that does exist is on the front page.</p>
+  <a class="go hl" href="./"><span class="hl">&larr; Back to the front page</span></a>
+
+  <div class="back">
+    <span>Founded 2011</span>
+    <nav><a href="./" class="hl">Front page</a><a href="contact.html" class="hl">Contact</a></nav>
+    <span>&copy; Neyaz Farooquee</span>
+  </div>
+
+</div>
+<script>
+document.getElementById('today').textContent =
+  new Date().toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+</script>
+</body>
+</html>
