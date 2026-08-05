@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Neyaz Farooquee — reporting and production, South Asia</title>
+<title>Neyaz Farooquee — a bit of journalism, a bit of writing</title>
 <meta name="description" content="Reporting and production from India and South Asia. Politics, business and society, in text and video.">
 
-<meta property="og:title" content="Neyaz Farooquee — reporting and production, South Asia">
+<meta property="og:title" content="Neyaz Farooquee — a bit of journalism, a bit of writing">
 <meta property="og:description" content="Reporting and production from India and South Asia. Politics, business and society, in text and video.">
 <meta property="og:image" content="https://neyazfarooquee.com/images/preview.jpg">
 <meta property="og:image:width" content="1200">
@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="Neyaz Farooquee">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Neyaz Farooquee — reporting and production, South Asia">
+<meta name="twitter:title" content="Neyaz Farooquee — a bit of journalism, a bit of writing">
 <meta name="twitter:description" content="Reporting and production from India and South Asia. Politics, business and society, in text and video.">
 <meta name="twitter:image" content="https://neyazfarooquee.com/images/preview.jpg">
 
@@ -64,7 +64,7 @@
       "@type": "ProfilePage",
       "@id": "https://neyazfarooquee.com/#page",
       "url": "https://neyazfarooquee.com/",
-      "name": "Neyaz Farooquee \u2014 reporting and production, South Asia",
+      "name": "Neyaz Farooquee — a bit of journalism, a bit of writing",
       "mainEntity": { "@id": "https://neyazfarooquee.com/#person" }
     },
     {
@@ -386,7 +386,7 @@ dialog::backdrop{background:rgba(26,26,24,.45)}
 </div>
 
 <div class="wrap">
-  <h1 class="sr">Neyaz Farooquee — reporting and production, South Asia</h1>
+  <h1 class="sr">Neyaz Farooquee — a bit of journalism, a bit of writing</h1>
 
   <div class="folio" id="folio"></div>
 
@@ -482,6 +482,7 @@ const DEFAULT = {
     "printed": "Published from Mumbai and New Delhi",
     "languages": "In English, Urdu, Hindi and Bhojpuri",
     "founded": "Founded 2011",
+    "rights": "(CC BY-ND)",
     "email": "hello@neyazfarooquee.com",
     "printedShort": "Mumbai and New Delhi",
     "languagesShort": "English, Urdu, Hindi and Bhojpuri"
@@ -860,7 +861,7 @@ function render(){
   $('strap').innerHTML='<span><span class="dk">'+esc(m.printed)+'</span><span class="mb">'+esc(m.printedShort||m.printed)+'</span></span>'+
     '<span><span class="dk">'+esc(m.languages)+'</span><span class="mb">'+esc(m.languagesShort||m.languages)+'</span></span>';
   $('founded').textContent=m.founded;
-  $('who').textContent=m.first+' '+m.last;
+  $('who').textContent=m.first+' '+m.last+(m.rights?' '+m.rights:'');
   const mail='mailto:'+m.email;
 
   const a=data.ad;
@@ -937,7 +938,7 @@ function render(){
 }
 
 const SCHEMA={
-  masthead:[['first','First name'],['last','Surname'],['mono','Monogram'],['slogan','Slogan'],['vol','Volume line (leave blank to auto-generate)'],['price','Price line'],['printed','Published-from line'],['printedShort','Published-from line (mobile)'],['languagesShort','Languages line (mobile)'],['languages','Languages line'],['founded','Founded line'],['email','Email'],],
+  masthead:[['first','First name'],['last','Surname'],['mono','Monogram'],['slogan','Slogan'],['vol','Volume line (leave blank to auto-generate)'],['price','Price line'],['printed','Published-from line'],['printedShort','Published-from line (mobile)'],['languagesShort','Languages line (mobile)'],['languages','Languages line'],['founded','Founded line'],['rights','Rights line after the name'],['email','Email'],],
   ad:[['cover','Book cover image URL'],['coverAlt','Cover image alt text'],['buyLabel','Buy button label'],['buyUrl','Buy link'],['claim','Praise quote','area'],['praiseSource','Quote source'],['bookTitle','Book title and imprint'],['body','About the author','area'],['label','Label above the ad'],['fine','Small print (optional)'],['cta','Button label'],['ctaUrl','Button link']],
   lead:[['kicker','Kicker (outlet, dateline)'],['hed','Headline'],['deck','Standfirst','area'],['img','Image URL'],['pos','Image position (e.g. center, top, 50% 30%)'],['caption','Photo caption'],['credit','Photo credit'],['url','Link'],['kind','Type','select']],
   feature:[['kicker','Kicker'],['hed','Headline'],['dur','Duration'],['deck','Standfirst','area'],['img','Poster image URL'],['pos','Image position (e.g. center, top, 50% 30%)'],['credit','Photo credit'],['role','Your role'],['url','Link']],
