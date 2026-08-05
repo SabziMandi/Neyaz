@@ -7,11 +7,11 @@
     "vol": "",
     "price": "Price: my data",
     "printed": "Published from Mumbai and New Delhi",
-    "languages": "Published in English, Urdu, Hindi and Bhojpuri",
+    "languages": "In English, Urdu, Hindi and Bhojpuri",
     "founded": "Founded 2011",
     "email": "hello@neyazfarooquee.com",
     "printedShort": "Mumbai and New Delhi",
-    "languagesShort": "In English, Urdu, Hindi and Bhojpuri"
+    "languagesShort": "English, Urdu, Hindi and Bhojpuri"
   },
   "ad": {
     "claim": "A dazzling debut by a greatly gifted and remarkably brave writer",
@@ -24,7 +24,7 @@
     "coverAlt": "Cover of An Ordinary Man's Guide to Growing Up Muslim in India",
     "buyLabel": "Buy the book",
     "buyUrl": "https://www.amazon.in/Ordinary-Guide-Growing-Muslim-India/dp/9379853602/",
-    "label": "This is a paid advertisement",
+    "label": "This is a fully paid advertisement",
     "ctaUrl": "contact.html"
   },
   "lead": {
@@ -116,9 +116,9 @@
     {
       "kind": "reported",
       "kicker": "Read · Reporting",
-      "hed": "Why there are endless legal battles over centuries-old Muslim properties in India",
-      "deck": "Thousands of Muslim charitable and religious properties in India are tangled in long-running disputes.",
-      "url": "https://www.bbc.com/news/articles/cly84vggk4ro"
+      "hed": "‘Please save me’: The Indians duped into fighting for Russia",
+      "deck": "More than 100 Indians are fighting a war they say they didn’t sign up for. Now, they want to return home.",
+      "url": "https://www.bbc.com/news/articles/cly6ve2x72xo"
     }
   ],
   "feature": {
@@ -179,9 +179,9 @@
       "url": "https://www.bbc.com/news/articles/c70e0drd480o"
     },
     {
-      "outlet": "Feature",
-      "title": "The decades-old intrigue over an Indian guest house in Mecca",
-      "url": "https://www.bbc.com/news/articles/cwy3gqz48qzo"
+      "outlet": "Explainer",
+      "title": "Why there are endless legal battles over centuries-old Muslim properties in India",
+      "url": "https://www.bbc.com/news/articles/cly84vggk4ro"
     }
   ],
   "corrections": [
@@ -203,11 +203,12 @@
   ],
   "letters": [
     {
-      "text": "Is your output legitimate? Is it verifiable?",
+      "text": "Is your journalism legitimate? Is it verifiable?",
       "attr": "Anonymous",
       "note": "Yes.",
       "noteLink": "Write to us",
-      "noteUrl": "contact.html"
+      "noteUrl": "contact.html",
+      "noteAfter": "for details"
     }
   ],
   "social": [
@@ -248,6 +249,39 @@
       "outlet": "New York Times",
       "title": "Can urban planning help India's cities reduce sexual violence?",
       "url": "https://archive.nytimes.com/india.blogs.nytimes.com/2013/09/26/can-urban-planning-help-indias-cities-reduce-sexual-violence/"
+    }
+  ],
+  "abouthead": "[More] about us",
+  "about": [
+    {
+      "type": "Excerpt",
+      "outlet": "Hindustan Times",
+      "url": "https://www.hindustantimes.com/books/excerpt-an-ordinary-man-s-guide-to-radicalism/story-B6oytOEPyPnZG8vxIKZJiI.html"
+    },
+    {
+      "type": "Review",
+      "outlet": "Business Standard",
+      "url": "https://www.business-standard.com/article/beyond-business/farooquee-s-book-explains-reality-of-growing-up-as-a-young-muslim-in-india-118022301328_1.html"
+    },
+    {
+      "type": "Review",
+      "outlet": "Frontline",
+      "url": "https://frontline.thehindu.com/books/article24562299.ece"
+    },
+    {
+      "type": "Review",
+      "outlet": "The Wire",
+      "url": "https://thewire.in/books/acknowledging-unraveling-image-good-muslim"
+    },
+    {
+      "type": "Interview",
+      "outlet": "Times of India",
+      "url": "https://timesofindia.indiatimes.com/home/sunday-times/all-that-matters/india-was-always-divided-but-now-theres-no-subtlety-even-in-bigotry-says-writer-neyaz-farooquee/articleshow/63764074.cms"
+    },
+    {
+      "type": "Interview",
+      "outlet": "Al Jazeera",
+      "url": "https://www.aljazeera.com/features/2018/4/12/anti-muslim-bigotry-has-been-normalised-under-modi"
     }
   ]
 }

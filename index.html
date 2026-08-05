@@ -201,6 +201,19 @@ a:hover .hl{text-decoration:underline;text-underline-offset:3px}
 .promo .o{font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--reported);margin-bottom:5px}
 .promo .t{font-size:14px;font-weight:500;line-height:1.35}
 
+.about{border-top:1px solid var(--rule);margin:22px 0 20px;padding-top:13px}
+.about .ah{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;margin-bottom:7px;font-family:var(--sans);text-transform:uppercase}
+.about .ah .t1{font-size:10px;letter-spacing:.11em;color:var(--ink-2)}
+.about .ah .t2{font-size:9.5px;letter-spacing:.07em;color:var(--ink-3)}
+.about .strip{font-size:13px;line-height:1.7}
+.about .sep{color:var(--ink-3);margin:0 7px}
+.about .gap{display:inline-block;width:1px;height:11px;background:var(--ink-3);opacity:.5;margin:0 12px;vertical-align:-1px}
+.about .it{display:inline-block}
+.about .it a{border-bottom:1px solid var(--rule)}
+.about .it a:hover{border-bottom-color:var(--ink)}
+body.editing .about .it{display:block;margin-bottom:6px}
+body.editing .about .sep,body.editing .about .gap{display:none}
+
 .foot2{border-top:1px solid var(--ink);margin-top:28px;padding-top:20px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1.3fr) minmax(0,0.5fr);gap:26px}
 .soc{display:flex;justify-content:space-between;align-items:center;gap:10px}
 body.editing .soc{flex-wrap:wrap;justify-content:flex-start;gap:16px}
@@ -269,6 +282,10 @@ dialog::backdrop{background:rgba(26,26,24,.45)}
   .ad .bookcol{width:128px}
   .ad .cta{padding:11px 26px}
 
+  .about{margin:20px 0 18px;padding-top:12px}
+  .about .strip{font-size:12.5px}
+  .about .gap{margin:0 9px}
+
   .dk{display:none}
   .mb{display:inline}
   .foot2{grid-template-columns:1fr;gap:0;border-top:1px solid var(--ink);padding-top:16px}
@@ -289,7 +306,7 @@ dialog::backdrop{background:rgba(26,26,24,.45)}
   .bar,.ctl,.toast,dialog,.editbtn,.ad .cta,.ad .buy,.sub .sb,.vid .play,.sub .sf{display:none}
   a{text-decoration:none;color:inherit}
   a[href^="http"]::after{content:" " attr(href);font-family:var(--sans);font-size:6pt;color:var(--ink-3);word-break:break-all;display:block;margin-top:1mm}
-  .soc a::after,.ad a::after,.colophon a::after,.rel a::after{content:none}
+  .soc a::after,.ad a::after,.colophon a::after,.rel a::after,.about a::after{content:none}
 
   .flag{margin:4mm 0 2mm}
   .flag .nm{font-size:30pt}
@@ -339,6 +356,8 @@ dialog::backdrop{background:rgba(26,26,24,.45)}
   .sub{margin-top:3mm;padding-top:3mm}
   .sub .st{font-size:10.5pt;margin-bottom:0}
 
+  .about{margin:4mm 0;padding-top:2mm}
+  .about .strip{font-size:8.5pt}
   .promo{margin-top:5mm;padding:4mm}
   .promo .grid{grid-template-columns:repeat(3,1fr);gap:5mm}
   .promo .t{font-size:10pt}
@@ -349,7 +368,7 @@ dialog::backdrop{background:rgba(26,26,24,.45)}
   .mb{display:none}
   .vid .dur,.vid .ovc{text-shadow:none}
 
-  .box,.railitem,.brief,.row3 .col,.arch .row,.rel,.promo>div,.adslot,.capline{break-inside:avoid}
+  .box,.railitem,.brief,.row3 .col,.arch .row,.rel,.promo>div,.adslot,.capline,.about{break-inside:avoid}
   .colophon{margin-top:4mm;padding-top:3mm}
   .colophon::after{content:"Printed from neyazfarooquee.com";display:block;width:100%;text-align:center;margin-top:3mm;font-size:6.5pt;color:var(--ink-3)}
 }
@@ -417,6 +436,12 @@ dialog::backdrop{background:rgba(26,26,24,.45)}
   </div>
   <div class="ctl"><button type="button" data-act="add" data-sec="promo">Add byline</button><button type="button" data-act="edit-promohead">Rename box</button></div>
 
+  <div class="about">
+    <div class="ah" id="abouthead"></div>
+    <div class="strip" id="aboutstrip"></div>
+    <div class="ctl"><button type="button" data-act="add" data-sec="about">Add link</button><button type="button" data-act="edit-abouthead">Rename box</button></div>
+  </div>
+
   <div class="foot2">
     <div class="col">
       <div class="h">[Course] corrections</div>
@@ -437,7 +462,7 @@ dialog::backdrop{background:rgba(26,26,24,.45)}
 
   <div class="colophon">
     <span id="founded"></span>
-    <nav><a href="contact.html" class="hl">Contact</a><a href="#archive-box" class="hl" id="archive">Archive</a></nav>
+    <nav><a href="contact.html" class="hl">Contact</a><a href="https://muckrack.com/neyaz-farooquee" target="_blank" rel="noopener noreferrer" class="hl" id="archive">Archive</a></nav>
     <span>&copy; <span id="who"></span></span>
   </div>
 </div>
@@ -455,11 +480,11 @@ const DEFAULT = {
     "vol": "",
     "price": "Price: my data",
     "printed": "Published from Mumbai and New Delhi",
-    "languages": "Published in English, Urdu, Hindi and Bhojpuri",
+    "languages": "In English, Urdu, Hindi and Bhojpuri",
     "founded": "Founded 2011",
     "email": "hello@neyazfarooquee.com",
     "printedShort": "Mumbai and New Delhi",
-    "languagesShort": "In English, Urdu, Hindi and Bhojpuri"
+    "languagesShort": "English, Urdu, Hindi and Bhojpuri"
   },
   "ad": {
     "claim": "A dazzling debut by a greatly gifted and remarkably brave writer",
@@ -472,7 +497,7 @@ const DEFAULT = {
     "coverAlt": "Cover of An Ordinary Man's Guide to Growing Up Muslim in India",
     "buyLabel": "Buy the book",
     "buyUrl": "https://www.amazon.in/Ordinary-Guide-Growing-Muslim-India/dp/9379853602/",
-    "label": "This is a paid advertisement",
+    "label": "This is a fully paid advertisement",
     "ctaUrl": "contact.html"
   },
   "lead": {
@@ -564,9 +589,9 @@ const DEFAULT = {
     {
       "kind": "reported",
       "kicker": "Read · Reporting",
-      "hed": "Why there are endless legal battles over centuries-old Muslim properties in India",
-      "deck": "Thousands of Muslim charitable and religious properties in India are tangled in long-running disputes.",
-      "url": "https://www.bbc.com/news/articles/cly84vggk4ro"
+      "hed": "‘Please save me’: The Indians duped into fighting for Russia",
+      "deck": "More than 100 Indians are fighting a war they say they didn’t sign up for. Now, they want to return home.",
+      "url": "https://www.bbc.com/news/articles/cly6ve2x72xo"
     }
   ],
   "feature": {
@@ -627,9 +652,9 @@ const DEFAULT = {
       "url": "https://www.bbc.com/news/articles/c70e0drd480o"
     },
     {
-      "outlet": "Feature",
-      "title": "The decades-old intrigue over an Indian guest house in Mecca",
-      "url": "https://www.bbc.com/news/articles/cwy3gqz48qzo"
+      "outlet": "Explainer",
+      "title": "Why there are endless legal battles over centuries-old Muslim properties in India",
+      "url": "https://www.bbc.com/news/articles/cly84vggk4ro"
     }
   ],
   "corrections": [
@@ -651,11 +676,12 @@ const DEFAULT = {
   ],
   "letters": [
     {
-      "text": "Is your output legitimate? Is it verifiable?",
+      "text": "Is your journalism legitimate? Is it verifiable?",
       "attr": "Anonymous",
       "note": "Yes.",
       "noteLink": "Write to us",
-      "noteUrl": "contact.html"
+      "noteUrl": "contact.html",
+      "noteAfter": "for details"
     }
   ],
   "social": [
@@ -696,6 +722,39 @@ const DEFAULT = {
       "outlet": "New York Times",
       "title": "Can urban planning help India's cities reduce sexual violence?",
       "url": "https://archive.nytimes.com/india.blogs.nytimes.com/2013/09/26/can-urban-planning-help-indias-cities-reduce-sexual-violence/"
+    }
+  ],
+  "abouthead": "[More] about us",
+  "about": [
+    {
+      "type": "Excerpt",
+      "outlet": "Hindustan Times",
+      "url": "https://www.hindustantimes.com/books/excerpt-an-ordinary-man-s-guide-to-radicalism/story-B6oytOEPyPnZG8vxIKZJiI.html"
+    },
+    {
+      "type": "Review",
+      "outlet": "Business Standard",
+      "url": "https://www.business-standard.com/article/beyond-business/farooquee-s-book-explains-reality-of-growing-up-as-a-young-muslim-in-india-118022301328_1.html"
+    },
+    {
+      "type": "Review",
+      "outlet": "Frontline",
+      "url": "https://frontline.thehindu.com/books/article24562299.ece"
+    },
+    {
+      "type": "Review",
+      "outlet": "The Wire",
+      "url": "https://thewire.in/books/acknowledging-unraveling-image-good-muslim"
+    },
+    {
+      "type": "Interview",
+      "outlet": "Times of India",
+      "url": "https://timesofindia.indiatimes.com/home/sunday-times/all-that-matters/india-was-always-divided-but-now-theres-no-subtlety-even-in-bigotry-says-writer-neyaz-farooquee/articleshow/63764074.cms"
+    },
+    {
+      "type": "Interview",
+      "outlet": "Al Jazeera",
+      "url": "https://www.aljazeera.com/features/2018/4/12/anti-muslim-bigotry-has-been-normalised-under-modi"
     }
   ]
 };
@@ -766,6 +825,32 @@ function autoFolio(m){
   return (vol?'Vol. '+vol+' \u00b7 ':'')+'No. '+no;
 }
 
+// Runs of neighbouring entries sharing a tag form one group. The bracketed
+// lead-in is built from those groups, so reordering or adding a kind in edit
+// mode keeps the label and the list in step.
+function aboutGroups(){
+  const A=data.about||[],groups=[];
+  A.forEach((x,i)=>{
+    const t=String(x.type||'').trim();
+    const g=groups[groups.length-1];
+    if(g&&g.type===t)g.items.push([x,i]); else groups.push({type:t,items:[[x,i]]});
+  });
+  return groups;
+}
+function aboutLead(){
+  const parts=aboutGroups().map(g=>g.items.length>1?g.type+'s':g.type).filter(Boolean);
+  if(!parts.length)return '';
+  const s=parts.join(', ');
+  return '('+s.charAt(0).toUpperCase()+s.slice(1).toLowerCase()+')';
+}
+function aboutStrip(){
+  const n=(data.about||[]).length;
+  return aboutGroups().map((g,gi)=>(gi?'<span class="gap" aria-hidden="true"></span>':'')+
+    g.items.map(([x,i],j)=>(j?'<span class="sep">\u00b7</span>':'')+'<span class="it">'+
+      (x.url?'<a href="'+esc(x.url)+'"'+ext(x.url)+'>'+esc(x.outlet)+'</a>':esc(x.outlet))+
+      itemCtl('about',i,n)+'</span>').join('')).join('');
+}
+
 function render(){
   const m=data.masthead;
   $('folio').innerHTML='<span>'+esc((m.vol&&m.vol.trim())?m.vol:autoFolio(m))+'</span><span id="today"></span><span>'+esc(m.price)+'</span>';
@@ -829,10 +914,14 @@ function render(){
   $('promo').innerHTML=data.promo.map((p,i)=>
     '<div><div class="o">'+esc(p.outlet)+'</div><a href="'+esc(p.url)+'"'+ext(p.url)+'><div class="t"><span class="hl">'+esc(p.title)+'</span></div></a>'+itemCtl('promo',i,data.promo.length)+'</div>').join('');
 
+  $('abouthead').innerHTML='<span class="t1">'+esc(data.abouthead||'[More] about us')+'</span>'+
+    '<span class="t2">'+esc(aboutLead())+'</span>';
+  $('aboutstrip').innerHTML=aboutStrip();
+
   $('corrections').innerHTML='<p class="t">'+data.corrections.map(c=>esc(c.text)).join(' &nbsp;&rarr;&nbsp; ')+'</p>'+
     data.corrections.map((c,i)=>itemCtl('corrections',i,data.corrections.length)).join('');
   $('letters').innerHTML=data.letters.map((l,i)=>'<p class="t">\u201c'+esc(l.text)+'\u201d<span class="attr">\u2014 '+esc(l.attr)+'</span>'+
-    (l.note?'<span class="ednote"><b>Editor\u2019s note:</b>'+esc(l.note)+(l.noteLink?' <a href="'+esc(l.noteUrl||'contact.html')+'"'+ext(l.noteUrl)+' class="hl" style="color:var(--reported)">'+esc(l.noteLink)+'</a>':'')+'</span>':'')+'</p>'+itemCtl('letters',i,data.letters.length)).join('');
+    (l.note?'<span class="ednote"><b>Editor\u2019s note:</b>'+esc(l.note)+(l.noteLink?' <a href="'+esc(l.noteUrl||'contact.html')+'"'+ext(l.noteUrl)+' class="hl" style="color:var(--reported)">'+esc(l.noteLink)+'</a>':'')+(l.noteAfter?' '+esc(l.noteAfter):'')+'</span>':'')+'</p>'+itemCtl('letters',i,data.letters.length)).join('');
 
   const SC=data.social||[];
   $('social').innerHTML=SC.map((a,i)=>{
@@ -859,8 +948,9 @@ const SCHEMA={
   briefs:[['hed','Brief headline'],['dateline','Dateline (place)'],['year','Year'],['text','Text','area']],
   promo:[['outlet','Outlet'],['title','Headline'],['url','Link']],
   archive:[['outlet','Outlet'],['title','Headline'],['url','Link']],
+  about:[['type','Kind (Excerpt, Review, Interview)'],['outlet','Outlet'],['url','Link']],
   corrections:[['text','Step']],
-  letters:[['text','Letter','area'],['attr','Attribution'],['note',"Editor's note",'area'],['noteLink','Link text in the note'],['noteUrl','Link target']],
+  letters:[['text','Letter','area'],['attr','Attribution'],['note',"Editor's note",'area'],['noteLink','Link text in the note'],['noteUrl','Link target'],['noteAfter','Text after the link']],
   social:[['platform','Platform (x, instagram, facebook, linkedin)'],['handle','Handle or label shown'],['url','Link']]
 };
 const BLANK={
@@ -871,8 +961,9 @@ const BLANK={
   briefs:{hed:'New brief',dateline:'Mumbai',year:'',text:''},
   promo:{outlet:'Outlet',title:'New byline',url:''},
   archive:{outlet:'Outlet',title:'New story',url:''},
+  about:{type:'Review',outlet:'Outlet',url:''},
   corrections:{text:'New step'},
-  letters:{text:'',attr:'',note:'',noteLink:'',noteUrl:'contact.html'},
+  letters:{text:'',attr:'',note:'',noteLink:'',noteUrl:'contact.html',noteAfter:''},
   social:{platform:'x',handle:'@handle',url:''}
 };
 const get=p=>p.split('.').reduce((o,k)=>o[k],data);
@@ -901,6 +992,7 @@ document.addEventListener('click',e=>{
   if(act==='edit-lead')return openForm('Lead story',SCHEMA.lead,data.lead);
   if(act==='edit-feature')return openForm('Feature video',SCHEMA.feature,data.feature);
   if(act==='edit-archivehead'){const o={archivehead:data.archivehead};return openForm('Box title',[['archivehead','Title']],o,()=>{data.archivehead=o.archivehead;});}
+  if(act==='edit-abouthead'){const o={abouthead:data.abouthead};return openForm('Box title',[['abouthead','Title']],o,()=>{data.abouthead=o.abouthead;});}
   if(act==='edit-promohead'){const o={promohead:data.promohead};return openForm('Box title',[['promohead','Title']],o,()=>{data.promohead=o.promohead;});}
   const arr=get(sec);
   if(act==='add'){const it=structuredClone(BLANK[skey(sec)]);arr.push(it);save();openForm('New entry',SCHEMA[skey(sec)],it);return;}
@@ -929,6 +1021,8 @@ $('rst').onclick=async()=>{const s=await store.get();data=s||structuredClone(DEF
   try{const r=await fetch('data.json',{cache:'no-store'});if(r.ok)data=await r.json();}catch(e){}
   const s=await store.get();if(s)data=s;
   if(!Array.isArray(data.social))data.social=structuredClone(DEFAULT.social);
+  if(!Array.isArray(data.about))data.about=structuredClone(DEFAULT.about);
+  if(!data.abouthead)data.abouthead=DEFAULT.abouthead;
   render();
   if(location.hash==='#edit')document.body.classList.add('editing');
 })();
