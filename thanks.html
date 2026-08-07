@@ -28,6 +28,7 @@ a.hl:hover{text-decoration:underline;text-underline-offset:3px}
 .kick{font-family:var(--sans);font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--reported);margin-bottom:10px}
 h1{font-family:var(--serif);font-weight:500;font-size:30px;line-height:1.2;margin:0 0 14px}
 .body{font-size:15px;line-height:1.75;color:var(--ink-2)}
+.back nav{display:flex;gap:16px}
 .back{border-top:1px solid var(--ink);margin-top:52px;padding-top:14px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--sans);font-size:10.5px;color:var(--ink-3)}
 @media (max-width:760px){.wrap{padding:24px 18px 32px}.strap{margin-bottom:34px;font-size:9.5px;flex-wrap:nowrap;gap:6px}
 .strap span{white-space:nowrap}.dk{display:none}.mb{display:inline}}
@@ -52,11 +53,12 @@ h1{font-family:var(--serif);font-weight:500;font-size:30px;line-height:1.2;margi
   <div class="card">
     <div class="kick">Correspondence</div>
     <h1>Your message has reached us.</h1>
-    <p class="body">Thank you for writing. Expect some delay due to the volume of email; we will try to respond as quickly as possible. You may write directly on this email but that would be redundant: <span style="white-space:nowrap">neyaz.jmi at gmail dot com</span></p>
+    <p class="body">Thank you for writing. Your prose is beautiful.</p>
   </div>
 
   <div class="back">
     <a class="hl" href="./index.html">&larr; Back to the front page</a>
+    <nav><a href="https://muckrack.com/neyaz-farooquee" target="_blank" rel="noopener noreferrer" class="hl">Archive</a></nav>
     <span>&copy; <span id="who"></span></span>
   </div>
 </div>
@@ -64,7 +66,7 @@ h1{font-family:var(--serif);font-weight:500;font-size:30px;line-height:1.2;margi
 <script>
 const FALLBACK={first:"Neyaz",last:"Farooquee",mono:"NF",slogan:"Making sense of India and South Asia",
  vol:"Vol. XV \u00b7 No. 3",price:"Price: my data",printed:"Mumbai and New Delhi",
- languages:"In English, Urdu, Hindi and Bhojpuri",email:"[your email]"};
+ languages:"In English, Urdu, Hindi and Bhojpuri",rights:"(CC BY-ND)",email:"[your email]"};
 (async function(){
   let m=FALLBACK;
   try{const r=await fetch('data.json',{cache:'no-store'});if(r.ok){const d=await r.json();m=Object.assign({},FALLBACK,d.masthead||{});}}catch(e){}
@@ -72,7 +74,7 @@ const FALLBACK={first:"Neyaz",last:"Farooquee",mono:"NF",slogan:"Making sense of
   set('first',m.first);set('last',m.last);set('mono',m.mono);set('slogan',m.slogan);
   set('vol',m.vol);set('price',m.price);set('printed',m.printed);set('languages',m.languages);
   set('printedShort',m.printedShort||m.printed);set('languagesShort',m.languagesShort||m.languages);
-  set('who',m.first+' '+m.last);
+  set('who',m.first+' '+m.last+(m.rights?' '+m.rights:''));
   document.getElementById('today').textContent=new Date().toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
 })();
 </script>
