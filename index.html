@@ -201,7 +201,10 @@ a:hover .hl{text-decoration:underline;text-underline-offset:3px}
 .promo .o{font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--reported);margin-bottom:5px}
 .promo .t{font-size:14px;font-weight:500;line-height:1.35}
 
-.about{border-top:1px solid var(--rule);margin:22px 0 20px;padding-top:13px}
+.about{border-top:1px solid var(--rule);margin:22px 0 0;padding-top:13px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:start}
+.about .scol{border-left:1px solid var(--rule);padding-left:24px}
+.about .scol .h{font-family:var(--sans);font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-2);margin-bottom:7px}
+.about .soc{justify-content:flex-start;gap:17px}
 .about .ah{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;margin-bottom:7px;font-family:var(--sans);text-transform:uppercase}
 .about .ah .t1{font-size:10px;letter-spacing:.11em;color:var(--ink-2)}
 .about .ah .t2{font-size:9.5px;letter-spacing:.07em;color:var(--ink-3)}
@@ -214,7 +217,7 @@ a:hover .hl{text-decoration:underline;text-underline-offset:3px}
 body.editing .about .it{display:block;margin-bottom:6px}
 body.editing .about .sep,body.editing .about .gap{display:none}
 
-.foot2{border-top:1px solid var(--ink);margin-top:28px;padding-top:20px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1.3fr) minmax(0,0.5fr);gap:26px}
+.foot2{border-top:1px solid var(--ink);margin-top:28px;padding-top:20px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1.3fr);gap:26px}
 .soc{display:flex;justify-content:space-between;align-items:center;gap:10px}
 body.editing .soc{flex-wrap:wrap;justify-content:flex-start;gap:16px}
 .soc .row{display:flex;align-items:center;color:var(--ink-2)}
@@ -282,7 +285,9 @@ dialog::backdrop{background:rgba(26,26,24,.45)}
   .ad .bookcol{width:128px}
   .ad .cta{padding:11px 26px}
 
-  .about{margin:20px 0 18px;padding-top:12px}
+  .about{margin:20px 0 0;padding-top:12px;grid-template-columns:1fr;gap:0}
+  .about .scol{border-left:0;padding-left:0;border-top:1px solid var(--rule);margin-top:16px;padding-top:14px}
+  .about .soc{justify-content:space-between;gap:10px}
   .about .strip{font-size:12.5px}
   .about .gap{margin:0 9px}
 
@@ -361,7 +366,7 @@ dialog::backdrop{background:rgba(26,26,24,.45)}
   .promo{margin-top:5mm;padding:4mm}
   .promo .grid{grid-template-columns:repeat(3,1fr);gap:5mm}
   .promo .t{font-size:10pt}
-  .foot2{display:grid;grid-template-columns:1.2fr 1.3fr .5fr;gap:5mm;margin-top:5mm;padding-top:4mm}
+  .foot2{display:grid;grid-template-columns:1.2fr 1.3fr;gap:5mm;margin-top:5mm;padding-top:4mm}
   .foot2 .col{border-right:1px solid var(--rule);border-top:0;margin-top:0;padding-right:5mm;padding-top:0}
   .foot2 .col:last-child{border-right:0}
   .dk{display:inline}
@@ -436,12 +441,6 @@ dialog::backdrop{background:rgba(26,26,24,.45)}
   </div>
   <div class="ctl"><button type="button" data-act="add" data-sec="promo">Add byline</button><button type="button" data-act="edit-promohead">Rename box</button></div>
 
-  <div class="about">
-    <div class="ah" id="abouthead"></div>
-    <div class="strip" id="aboutstrip"></div>
-    <div class="ctl"><button type="button" data-act="add" data-sec="about">Add link</button><button type="button" data-act="edit-abouthead">Rename box</button></div>
-  </div>
-
   <div class="foot2">
     <div class="col">
       <div class="h">[Course] corrections</div>
@@ -453,7 +452,15 @@ dialog::backdrop{background:rgba(26,26,24,.45)}
       <div id="letters"></div>
       <div class="ctl"><button type="button" data-act="add" data-sec="letters">Add letter</button></div>
     </div>
-    <div class="col">
+  </div>
+
+  <div class="about">
+    <div class="acol">
+      <div class="ah" id="abouthead"></div>
+      <div class="strip" id="aboutstrip"></div>
+      <div class="ctl"><button type="button" data-act="add" data-sec="about">Add link</button><button type="button" data-act="edit-abouthead">Rename box</button></div>
+    </div>
+    <div class="scol">
       <div class="h">Elsewhere</div>
       <div class="soc" id="social"></div>
       <div class="ctl"><button type="button" data-act="add" data-sec="social">Add account</button></div>
